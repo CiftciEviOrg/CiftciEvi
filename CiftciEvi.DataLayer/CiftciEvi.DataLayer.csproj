@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="HizmetVer.cs" />
+    <Compile Include="IsIlani.cs" />
     <Compile Include="Kategori.cs" />
     <Compile Include="Kullanici.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
