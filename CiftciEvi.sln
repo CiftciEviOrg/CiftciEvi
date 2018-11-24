@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CiftciEvi.Web", "CiftciEvi\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CiftciEvi.BusinessLayer", "CiftciEvi.BusinessLayer\CiftciEvi.BusinessLayer.csproj", "{AB1B5F06-E1F0-483F-90FD-A7C9D17F2307}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CiftciEvi.DataLayer", "CiftciEvi.DataLayer\CiftciEvi.DataLayer.csproj", "{29F4E6F5-825F-4DE8-8F00-B1F1D8798E18}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{AB1B5F06-E1F0-483F-90FD-A7C9D17F2307}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AB1B5F06-E1F0-483F-90FD-A7C9D17F2307}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AB1B5F06-E1F0-483F-90FD-A7C9D17F2307}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29F4E6F5-825F-4DE8-8F00-B1F1D8798E18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29F4E6F5-825F-4DE8-8F00-B1F1D8798E18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29F4E6F5-825F-4DE8-8F00-B1F1D8798E18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29F4E6F5-825F-4DE8-8F00-B1F1D8798E18}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
