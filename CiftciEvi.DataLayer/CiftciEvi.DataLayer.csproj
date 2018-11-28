@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Adres.cs" />
     <Compile Include="Arazi.cs" />
+    <Compile Include="Durum.cs" />
     <Compile Include="Gundem.cs" />
     <Compile Include="Hayvanlar.cs" />
     <Compile Include="HizmetVer.cs" />
