@@ -44,6 +44,7 @@
     <Compile Include="Adres.cs" />
     <Compile Include="Gundem.cs" />
     <Compile Include="HizmetVer.cs" />
+    <Compile Include="Ilan.cs" />
     <Compile Include="IsIlani.cs" />
     <Compile Include="Kategori.cs" />
     <Compile Include="Kullanici.cs" />
