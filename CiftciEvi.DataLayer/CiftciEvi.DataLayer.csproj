@@ -55,6 +55,7 @@
     <Compile Include="Mesaj.cs" />
     <Compile Include="MesajDetay.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resim.cs" />
     <Compile Include="TarimAraclari.cs" />
     <Compile Include="YorumDegerlendirme.cs" />
   </ItemGroup>
