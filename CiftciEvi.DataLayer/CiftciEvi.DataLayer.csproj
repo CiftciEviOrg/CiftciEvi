@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Adres.cs" />
     <Compile Include="Gundem.cs" />
     <Compile Include="HizmetVer.cs" />
     <Compile Include="IsIlani.cs" />
