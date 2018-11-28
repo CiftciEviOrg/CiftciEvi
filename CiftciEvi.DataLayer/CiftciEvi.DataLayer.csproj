@@ -46,6 +46,7 @@
     <Compile Include="Gundem.cs" />
     <Compile Include="Hayvanlar.cs" />
     <Compile Include="HizmetVer.cs" />
+    <Compile Include="Il.cs" />
     <Compile Include="Ilan.cs" />
     <Compile Include="IsIlani.cs" />
     <Compile Include="Kategori.cs" />
