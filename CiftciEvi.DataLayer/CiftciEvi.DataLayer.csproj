@@ -51,6 +51,7 @@
     <Compile Include="IsIlani.cs" />
     <Compile Include="Kategori.cs" />
     <Compile Include="Kullanici.cs" />
+    <Compile Include="Kurumsal.cs" />
     <Compile Include="Mesaj.cs" />
     <Compile Include="MesajDetay.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

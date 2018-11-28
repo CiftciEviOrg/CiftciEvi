@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CiftciEvi.DataLayer
 {
-    class MesajDetay
+    public class MesajDetay
     {
         public int Id { get; set; }
         public string Icerik { get; set; }
