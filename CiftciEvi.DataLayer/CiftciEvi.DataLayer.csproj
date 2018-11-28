@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Adres.cs" />
+    <Compile Include="Agac.cs" />
     <Compile Include="Arazi.cs" />
     <Compile Include="Durum.cs" />
     <Compile Include="Gundem.cs" />
@@ -52,10 +53,12 @@
     <Compile Include="IsIlani.cs" />
     <Compile Include="Kategori.cs" />
     <Compile Include="Kullanici.cs" />
+    <Compile Include="Kurumsal.cs" />
     <Compile Include="Mesaj.cs" />
     <Compile Include="MesajDetay.cs" />
     <Compile Include="Onay.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resim.cs" />
     <Compile Include="TarimAraclari.cs" />
     <Compile Include="YorumDegerlendirme.cs" />
   </ItemGroup>

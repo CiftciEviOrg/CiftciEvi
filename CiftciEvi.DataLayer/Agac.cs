@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace CiftciEvi.DataLayer
 {
-    public class Mesaj
+    public class Agac
     {
         public int Id { get; set; }
-        public Kullanici GonderenId { get; set; }
-        public Kullanici AliciId { get; set; }
-        public Ilan Ilan { get; set; }
+        public string AgacAdi { get; set; }
+        public string Cins { get; set; }
+        public int Adet { get; set; }
     }
 }
