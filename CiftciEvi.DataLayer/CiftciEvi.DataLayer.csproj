@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Adres.cs" />
+    <Compile Include="Arazi.cs" />
     <Compile Include="Gundem.cs" />
     <Compile Include="HizmetVer.cs" />
     <Compile Include="Ilan.cs" />
