@@ -9,9 +9,9 @@ namespace CiftciEvi.DataLayer
     public class YorumDegerlendirme
     {
         public int Id { get; set; }
-        public int Puan { get; set; }
+        public sbyte Puan { get; set; } //sbyte
         public string YorumIcerik { get; set; }
-        public int Tur { get; set; }
+        public bool Tur { get; set; } //true ise yorum false degerlendirme
         public HizmetVer HizmetVer { get; set; }
         public Kullanici Kullanici { get; set; }
         public Gundem Gundem { get; set; }
