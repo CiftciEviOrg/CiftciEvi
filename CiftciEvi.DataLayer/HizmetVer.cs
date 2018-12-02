@@ -15,7 +15,7 @@ namespace CiftciEvi.DataLayer
         public string Tur { get; set; }
         [Required]
         public int Deneyim { get; set; }
-        public int DegerlendirmePuan { get; set; }
+        public sbyte DegerlendirmePuan { get; set; } //sbyte
         public Kategori Kategori { get; set; }
     }
 }

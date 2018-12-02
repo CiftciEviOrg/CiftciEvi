@@ -15,7 +15,7 @@ namespace CiftciEvi.DataLayer
         public string CalismaSekli { get; set; } // tam, yarı, günübirlik zaman
 
         [Required]
-        public sbyte Deneyim { get; set; }    // 1-10 a kadar.
+        public sbyte Deneyim { get; set; }    // 1-10 a kadar. sbyte
         public Kategori Kategori { get; set; }
     }
 }
