@@ -27,18 +27,18 @@
                     <li class="nav-item active" style="padding-left:7%">
 
                     </li>
-                    <li class="nav-item active" style="padding-left:75px;" >
+                    <li class="nav-item active" style="padding-left:75px;">
                         <form class="form-inline my-2 my-lg-0">
                             <input class="form-control mr-sm-2" type="search" placeholder="İlan Ara" aria-label="Search" style="width:400px;">
                             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Ara</button>
                         </form>
                     </li>
-                   
+
 
                 </ul>
-           
-                    
-           
+
+
+
 
 
 
@@ -50,7 +50,9 @@
                             <li class="nav-item active" style="padding-right:6px;">
                                 <a href="/Giris/Index" style="color:aliceblue">@Session["kullaniciadi"].ToString()</a>
                             </li>
-                            <a style="padding-right:6px; padding-left:6px; color:aliceblue;">|</a>
+                            <li>
+                                <a style="padding-right:6px; padding-left:6px; color:aliceblue;">|</a>
+                            </li>
                             <li class="nav-item active">
                                 <a href="/Giris/Logout" style="color:aliceblue"> Çıkış </a>
                             </li>
@@ -72,7 +74,9 @@
                             <li class="nav-item active" style="">
                                 <a href="/Giris/Login" style="color:aliceblue">Giriş</a>
                             </li>
-                            <a style="padding-right:6px; padding-left:6px; color:aliceblue;">|</a>
+                            <li>
+                                <a style="padding-right:6px; padding-left:6px; color:aliceblue;">|</a>
+                            </li>
                             <li class="nav-item active">
                                 <a href="/Giris/Kayit" style="color:aliceblue">Kaydol</a>
                             </li>
@@ -93,16 +97,16 @@
         <div class="row">
 
             @*<div class="col" style=" border:solid">
-           
-            </div>*@
+
+                </div>*@
 
             <div class="col-md-12" style=" ">
                 @RenderBody()
             </div>
 
             @*<div class="col" style=" border:solid">
-          
-            </div>*@
+
+                </div>*@
 
         </div>
     </div>

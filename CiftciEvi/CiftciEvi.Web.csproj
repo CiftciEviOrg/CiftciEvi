@@ -114,7 +114,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\viewModel\loginModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -140,9 +139,9 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CiftciEvi.DataLayer\CiftciEvi.DataLayer.csproj">
-      <Project>{29F4E6F5-825F-4DE8-8F00-B1F1D8798E18}</Project>
-      <Name>CiftciEvi.DataLayer</Name>
+    <ProjectReference Include="..\CiftciEvi.BusinessLayer\CiftciEvi.BusinessLayer.csproj">
+      <Project>{0fd7fb23-328b-4b80-984c-9d026c460ced}</Project>
+      <Name>CiftciEvi.BusinessLayer</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
