@@ -1,5 +1,7 @@
 ﻿using CiftciEvi.DataLayer;
 using System;
+using CiftciEvi.Models;
+using CiftciEvi.Models.viewModel;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -24,6 +26,13 @@ namespace CiftciEvi.Controllers
             return View();
         }
 
+        public ActionResult Logout()
+        {
+            Session["uyeid"] = null;
+            Session.Abandon();
+            return RedirectToAction("Index", "Home");
+        }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Login(loginModel kullanici)
@@ -34,7 +43,7 @@ namespace CiftciEvi.Controllers
                 if (login != null)
                 {
                     Session["uyeid"] = login.Id;
-                    Session["kullaniciadi"] = login.Isim;
+                    Session["kullaniciadi"] = login.Adi;
                     Session["yetki"] = login.Adminmi;
                     return RedirectToAction("Index", "Home");
                 }
