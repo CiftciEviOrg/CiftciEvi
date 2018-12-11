@@ -1,16 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace CiftciEvi.DataLayer
 {
-    public class Adres
+    public class DataContext:DbContext
     {
-        public int Id { get; set; }
-        public string Ilce { get; set; }
-        public string MahalleKoy { get; set; }
+        public DbSet<Kullanici> Kullanicilar { get; set; }
+
 
     }
 }
