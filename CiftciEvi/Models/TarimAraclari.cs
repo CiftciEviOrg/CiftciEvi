@@ -8,6 +8,7 @@ namespace CiftciEvi.Models
 {
     public class TarimAraclari
     {
+        //Buradaki validasyonlar ara modellerde ayrı ayrı girilecektir.
         public int Id { get; set; }
         public string Marka { get; set; }
         public string Tipi { get; set; }

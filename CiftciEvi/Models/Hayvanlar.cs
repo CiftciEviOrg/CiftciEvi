@@ -8,6 +8,7 @@ namespace CiftciEvi.Models
 {
     public class Hayvanlar
     {
+        //Buradaki validasyonlar ara modellerde ayrı ayrı girilecektir.
         public int Id { get; set; }
         public string Tip { get; set; }
         public string Cins { get; set; }
