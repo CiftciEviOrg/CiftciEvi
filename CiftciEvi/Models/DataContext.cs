@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CiftciEvi.DataLayer
+namespace CiftciEvi.Models
 {
     public class DataContext:DbContext
     {

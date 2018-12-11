@@ -5,17 +5,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CiftciEvi.DataLayer
+namespace CiftciEvi.Models
 {
-    public class HizmetVer
+    public class Gundem
     {
         public int Id { get; set; }
 
         [Required]
-        public string Tur { get; set; }
+        public string Baslik { get; set; }
+
         [Required]
-        public int Deneyim { get; set; }
+        public string Yazi { get; set; }
+
+        public Resim Resim { get; set; }
         public sbyte DegerlendirmePuan { get; set; } //sbyte
+
         public Kategori Kategori { get; set; }
+
+        public Kullanici Kullanici { get; set; }
     }
 }

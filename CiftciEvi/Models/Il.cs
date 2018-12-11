@@ -4,12 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CiftciEvi.BusinessLayer.Models
+namespace CiftciEvi.Models
 {
-    public class Adres
+    public class Il
     {
         public int Id { get; set; }
-        public string Ilce { get; set; }
-        public string MahalleKoy { get; set; }
+        public string IlAdi { get; set; }
     }
 }

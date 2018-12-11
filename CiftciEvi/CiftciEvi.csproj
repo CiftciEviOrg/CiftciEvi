@@ -114,6 +114,27 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Adres.cs" />
+    <Compile Include="Models\Agac.cs" />
+    <Compile Include="Models\Arazi.cs" />
+    <Compile Include="Models\DataContext.cs" />
+    <Compile Include="Models\Durum.cs" />
+    <Compile Include="Models\Gundem.cs" />
+    <Compile Include="Models\Hayvanlar.cs" />
+    <Compile Include="Models\HizmetVer.cs" />
+    <Compile Include="Models\Il.cs" />
+    <Compile Include="Models\Ilan.cs" />
+    <Compile Include="Models\IsIlani.cs" />
+    <Compile Include="Models\Kategori.cs" />
+    <Compile Include="Models\Kullanici.cs" />
+    <Compile Include="Models\Kurumsal.cs" />
+    <Compile Include="Models\Mesaj.cs" />
+    <Compile Include="Models\MesajDetay.cs" />
+    <Compile Include="Models\Onay.cs" />
+    <Compile Include="Models\Resim.cs" />
+    <Compile Include="Models\TarimAraclari.cs" />
+    <Compile Include="Models\viewModel\loginModel.cs" />
+    <Compile Include="Models\YorumDegerlendirme.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -137,12 +158,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\CiftciEvi.BusinessLayer\CiftciEvi.BusinessLayer.csproj">
-      <Project>{0fd7fb23-328b-4b80-984c-9d026c460ced}</Project>
-      <Name>CiftciEvi.BusinessLayer</Name>
-    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

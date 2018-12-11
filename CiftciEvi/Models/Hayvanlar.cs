@@ -4,14 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CiftciEvi.DataLayer
+namespace CiftciEvi.Models
 {
-    public class Arazi
+    public class Hayvanlar
     {
         public int Id { get; set; }
-        public int Mkare { get; set; }
-        public int Su { get; set; }
-        public Agac Agac { get; set; }
+        public string Tip { get; set; }
+        public string Cins { get; set; }
+        public int TopluSatis { get; set; }
         public Kategori Kategori { get; set; }
     }
 }
