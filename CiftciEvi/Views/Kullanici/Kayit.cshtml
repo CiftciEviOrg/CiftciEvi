@@ -1,11 +1,16 @@
-﻿@model CiftciEvi.Models.Kullanici
+﻿
+
+@model CiftciEvi.Models.Kullanici
 
 
 @{
     ViewBag.Title = "Kayit";
 }
+@* Partial View *@
 
-<h2>Kayit</h2>
+
+<h1>Bireysel</h1>
+
 
 @using (Html.BeginForm())
 {
@@ -13,6 +18,7 @@
 
     <div class="form-horizontal">
         <h4>Kullanici</h4>
+        <a href="/Kullanici/KurumsalKayit"> Kurumsal Üye Ol!</a>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 

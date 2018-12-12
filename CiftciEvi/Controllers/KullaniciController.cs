@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CiftciEvi.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,6 +9,7 @@ namespace CiftciEvi.Controllers
 {
     public class KullaniciController : Controller
     {
+        private DataContext db = new DataContext();
         // GET: Kullanici
         public ActionResult Index()
         {
@@ -20,26 +22,43 @@ namespace CiftciEvi.Controllers
             return View();
         }
 
-        // GET: Kullanici/Create
-        public ActionResult Create()
+        // GET: Kullanici/Ekleme
+        public ActionResult Kayit()
         {
             return View();
         }
 
-        // POST: Kullanici/Create
+        // POST: Kullanici/Kayit   Bireysel Üyelik
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Kayit(Kullanici kullanici)
         {
-            try
+            if (ModelState.IsValid)
             {
-                // TODO: Add insert logic here
+                db.Kullanicilar.Add(kullanici);
+                db.SaveChanges();
+                return RedirectToAction("Login");
+            }
+            return View(kullanici);
+            
+        }
+        // GET: Kullanici/Ekleme
+        public ActionResult KurumsalKayit()
+        {
+            return View();
+        }
 
-                return RedirectToAction("Index");
-            }
-            catch
+        // POST: Kullanici/KurumsalKayit   Kurumsal Üyelik
+        [HttpPost]
+        public ActionResult KurumsalKayit(Kullanici kullanici)
+        {
+            if (ModelState.IsValid)
             {
-                return View();
+                db.Kullanicilar.Add(kullanici);
+                db.SaveChanges();
+                return RedirectToAction("Login");
             }
+            return View(kullanici);
+
         }
 
         // GET: Kullanici/Edit/5

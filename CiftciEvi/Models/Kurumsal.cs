@@ -9,7 +9,7 @@ namespace CiftciEvi.Models
     public class Kurumsal
     {
         public int Id { get; set; }
-        public bool IsletmeTuru { get; set; }
+        public bool IsletmeTuru { get; set; }  //false:şahıs, true:limited
         public string SabitTel { get; set; }
 
         public Il Il { get; set; }
