@@ -155,6 +155,7 @@
     <Content Include="Views\Kullanici\Kayit.cshtml" />
     <Content Include="Views\Kullanici\KurumsalKayit.cshtml" />
     <Content Include="Views\Kullanici\AdminKayit.cshtml" />
+    <Content Include="Views\Kullanici\List.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
