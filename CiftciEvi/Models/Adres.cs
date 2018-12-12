@@ -11,5 +11,6 @@ namespace CiftciEvi.Models
         public int Id { get; set; }
         public string Ilce { get; set; }
         public string MahalleKoy { get; set; }
+        public string AdresDetay { get; set; }
     }
 }

@@ -54,24 +54,7 @@ namespace CiftciEvi.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-        [HttpGet]
-        public ActionResult Kayit()
-        {
-            return View();
-        }
-
-        [HttpPost]
-        public ActionResult Kayit(Kullanici kullanici)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Kullanicilar.Add(kullanici);
-                db.SaveChanges();
-                return RedirectToAction("Login");
-            }
-            return View(kullanici);
-        }
-
+       
 
 
     }

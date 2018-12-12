@@ -12,11 +12,10 @@ namespace CiftciEvi.Models
         public bool IsletmeTuru { get; set; }
         public string SabitTel { get; set; }
 
+        public Il Il { get; set; }
         public Adres Adres { get; set; }
 
-        public string AdresDetay { get; set; }//Adresde olması gerekir...
-
-        public string FirmaAlani { get; set; }
+        public string FaaliyetAlani { get; set; }
         public string FirmaAdi { get; set; }
         public string TicariUnvan { get; set; }
     }

@@ -36,6 +36,15 @@ namespace CiftciEvi.Models
         [Phone(ErrorMessage ="Uygun bir cep telefonu giriniz.")]
         public string Cep { get; set; }
 
+        [Required]
+        public bool UyelikSozlesme { get; set; }
+
         public bool Adminmi { get; set; }
+
+        public bool KurumsalMi { get; set; }
+
+        public Kurumsal Kurumsal { get; set; }
+
+
     }
 }
