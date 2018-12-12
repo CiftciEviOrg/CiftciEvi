@@ -60,6 +60,25 @@ namespace CiftciEvi.Controllers
             return View(kullanici);
 
         }
+        // GET: Kullanici/AdminKayit
+        public ActionResult AdminKayit()
+        {
+            return View();
+        }
+
+        // POST: Kullanici/AdminKayit   Kurumsal Üyelik
+        [HttpPost]
+        public ActionResult AdminKayit(Kullanici kullanici)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Kullanicilar.Add(kullanici);
+                db.SaveChanges();
+                return RedirectToAction("Login");
+            }
+            return View(kullanici);
+
+        }
 
         // GET: Kullanici/Edit/5
         public ActionResult Edit(int id)
