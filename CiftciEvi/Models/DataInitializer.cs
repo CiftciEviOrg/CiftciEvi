@@ -10,8 +10,6 @@ namespace CiftciEvi.Models
     {
         public override string ToString()
         {
-            
-
 
             return base.ToString();
         }

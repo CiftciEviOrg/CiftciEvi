@@ -129,6 +129,7 @@
     <Compile Include="Models\Kategori.cs" />
     <Compile Include="Models\Kullanici.cs" />
     <Compile Include="Models\Kurumsal.cs" />
+    <Compile Include="Models\MarkaTarimArac.cs" />
     <Compile Include="Models\Mesaj.cs" />
     <Compile Include="Models\MesajDetay.cs" />
     <Compile Include="Models\Onay.cs" />

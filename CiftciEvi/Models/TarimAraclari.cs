@@ -10,7 +10,10 @@ namespace CiftciEvi.Models
     {
         //Buradaki validasyonlar ara modellerde ayrı ayrı girilecektir.
         public int Id { get; set; }
-        public string Marka { get; set; }
+        
+        //Extra 8: Marka icin yeni bir model icab etti
+        public MarkaTarimArac Marka { get; set; }
+
         public string Tipi { get; set; }
         public int Model { get; set; }
         public sbyte TekerlekSayisi { get; set; }
