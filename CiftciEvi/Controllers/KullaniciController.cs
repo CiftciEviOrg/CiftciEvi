@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 
@@ -125,25 +126,29 @@ namespace CiftciEvi.Controllers
         }
 
         // GET: Kullanici/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult Delete(int? id)
         {
-            return View();
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Kullanici kullanici = db.Kullanicilar.FirstOrDefault(i => i.Id == id);
+            if (kullanici == null)
+            {
+                return HttpNotFound();
+            }
+            return View(kullanici);
         }
 
         // POST: Kullanici/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete(int id)
         {
-            try
-            {
-                // TODO: Add delete logic here
+            Kullanici kullanici = db.Kullanicilar.Find(id);
+            db.Kullanicilar.Remove(kullanici);
+            db.SaveChanges();
+            return RedirectToAction("Index");
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
         }
     }
 }
