@@ -52,8 +52,104 @@ namespace CiftciEvi.Models
             }
             #endregion
 
+            #region "TarımAraclari Model"
+            List<TarimAraclari> tarimAraclari = new List<TarimAraclari>()
+            {
+                #region "TRAKTOR"
+                //TRAKTÖR
+                //Marka başka bir modelde
+                //Tipi: sbyte: 4 Farklı tip vardır. Burada sbyte olarak saklanmakta olup
+                    //Controller tarafında tipe göre yazdırılacaktır.    
+                    //Bahçe Tipi
+                    //Tarla Tipi
+                    //Bahçe + Tarla
+                    
+                //Model Yılı: int: Kullanıcıdan alınaccak| Validasyon 4 haneli sayı
+                //Vites başka bir modelde
+                //MotorGücüHP: int: Kullanıcıdan alınacak| Validasyona tabi olacak sadece sayı
+                //CalismaSaati: int: Kullanıcıdan alınacak| Validasyona tabi olacak sadece sayı
+                //KabinTipi: sbyte: 4 Farklı kabin tipi vardır. Burada sbyte olarak saklanmakta olup
+                    //Controller tarafında tipe göre yazdırılacaktır.
+                    //1: Kapalı Kabin
+                    //2: Klimalı Kabin
+                    //3: Tente
+                    //4: Yok
+                
+                //CekisTipi: sbyte: 2 Farklı cekis tipi vardır. Burada sbyte olarak saklanmakta olup    
+                    //Controller tarafında tipe göre yazdırılacaktır.
+                    //1: 4x2
+                    //2: 4x4
+	             
+                new TarimAraclari(){
+                    Marka =context.markaTarimAraclari.FirstOrDefault(p=>p.Id==1),
+                    Tipi=1,
+                    ModelYili=1998,
+                    Vites=context.vitesTarimAraclari.FirstOrDefault(p=>p.Id==2),
+                    MotorGucuHP=110,
+                    CalismaSaati=1000,
+                    KabinTipi=1,
+                    CekisTipi=1
+                },
 
+                new TarimAraclari(){
+                    Marka =context.markaTarimAraclari.FirstOrDefault(p=>p.Id==10),
+                    Tipi=2,
+                    ModelYili=1998,
+                    Vites=context.vitesTarimAraclari.FirstOrDefault(p=>p.Id==4),
+                    MotorGucuHP=80,
+                    CalismaSaati=1200,
+                    KabinTipi=4,
+                    CekisTipi=4
+                },
+                #endregion
+                #region "BicerDover"
+                //Marka: Traktördeki gibi başka bir modelden gelir
+                //Model Yılı: int: Kullanıcıdan alınaccak| Validasyon 4 haneli sayı
+                //Vites başka bir modelde
+                //MotorGücüHP: int: Kullanıcıdan alınacak| Validasyona tabi olacak sadece sayı
+                //CalismaSaati: int: Kullanıcıdan alınacak| Validasyona tabi olacak sadece sayı
+                //KabinTipi: sbyte: 4 Farklı kabin tipi vardır. Burada sbyte olarak saklanmakta olup
+                    //Controller tarafında tipe göre yazdırılacaktır.
+                    //1: Kapalı Kabin
+                    //2: Klimalı Kabin
+                    //3: Tente
+                    //4: Yok
 
+                new TarimAraclari(){
+                    Marka =context.markaTarimAraclari.FirstOrDefault(p=>p.Id==1),
+                    ModelYili=1998,
+                    Vites=context.vitesTarimAraclari.FirstOrDefault(p=>p.Id==2),
+                    MotorGucuHP=110,
+                    CalismaSaati=2000,
+                    KabinTipi=1,
+                },
+                #endregion
+                #region "Tasima"
+                new TarimAraclari(){
+                    //Burada marka simdilik boyledir.
+                    //ara modeller olustugu zaman Ana modelde marka stringe donecektir
+                    Marka=context.markaTarimAraclari.FirstOrDefault(p=>p.Id==4),
+                    Tipi =1,
+                        //Controller tarafında kontrol edilip
+                            //Römork
+                            //Konveyör& Bant
+                            //Tomruk çekici vinç
+                    ModelYili =1999,
+                    TekerlekSayisi=6
+                },
+                #endregion
+                #region "Diger"
+                new TarimAraclari()
+                {
+                    //Burada marka simdilik boyledir.
+                    //ara modeller olustugu zaman Ana modelde marka stringe donecektir
+                    Marka=context.markaTarimAraclari.FirstOrDefault(p=>p.Id==4),
+                    ModelYili=2005
+
+                }
+                #endregion
+            };
+            #endregion
 
 
 
