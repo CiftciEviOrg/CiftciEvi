@@ -25,13 +25,6 @@ namespace CiftciEvi.Controllers
             return View();
         }
 
-        public ActionResult Logout()
-        {
-            Session["uyeid"] = null;
-            Session.Abandon();
-            return RedirectToAction("Index", "Home");
-        }
-
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Login(loginModel kullanici)
@@ -39,7 +32,7 @@ namespace CiftciEvi.Controllers
             if (ModelState.IsValid)
             {
                 var login = db.Kullanicilar.FirstOrDefault(p => p.Cep == kullanici.Cep && p.Sifre == kullanici.Sifre);
-                if (login != null)
+                if (login != null) //Session Oluşturulması
                 {
                     Session["uyeid"] = login.Id;
                     Session["kullaniciadi"] = login.Adi;
@@ -49,12 +42,16 @@ namespace CiftciEvi.Controllers
                 else
                 {
                     TempData["hata"] = "Telefon Numarası veya Şifre Yanlış.";
-                    //TempData["LoginHata"] = "Cep Telefonu veya Şifre Yanlış.";
-                    //ModelState.AddModelError(string.Empty, "Cep Telefonu veya Şifre Yanlış.");
                 }
             }
             return View(kullanici);
+        }
 
+        public ActionResult Logout()
+        {
+            Session["uyeid"] = null;
+            Session.Abandon();
+            return RedirectToAction("Index", "Home");
         }
 
         [HttpGet]
