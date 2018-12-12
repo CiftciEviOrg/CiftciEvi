@@ -15,6 +15,13 @@ namespace CiftciEvi.Controllers
         {
             return View();
         }
+        public ActionResult List()
+        {
+            var kullanicilar = db.Kullanicilar.ToList();
+            return View(kullanicilar);
+        }
+
+
 
         // GET: Kullanici/Details/5
         public ActionResult Details(int id)
@@ -34,12 +41,20 @@ namespace CiftciEvi.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Kullanicilar.Add(kullanici);
-                db.SaveChanges();
-                return RedirectToAction("Login");
+                if (db.Kullanicilar.FirstOrDefault(p => p.Cep == kullanici.Cep) !=null)
+                {
+                    ModelState.AddModelError("Cep", "Bu numara başka bir kullanıcı tarafından kullanılmaktadır.");
+                }
+                else
+                {
+                    db.Kullanicilar.Add(kullanici);
+                    db.SaveChanges();
+                    return RedirectToAction("Login", "Giris");
+                }
+               
             }
             return View(kullanici);
-            
+
         }
         // GET: Kullanici/Ekleme
         public ActionResult KurumsalKayit()
@@ -51,14 +66,17 @@ namespace CiftciEvi.Controllers
         [HttpPost]
         public ActionResult KurumsalKayit(Kullanici kullanici)
         {
-            if (ModelState.IsValid)
+            if (db.Kullanicilar.FirstOrDefault(p => p.Cep == kullanici.Cep) != null)
+            {
+                ModelState.AddModelError("Cep", "Bu numara başka bir kullanıcı tarafından kullanılmaktadır.");
+            }
+            else
             {
                 db.Kullanicilar.Add(kullanici);
                 db.SaveChanges();
-                return RedirectToAction("Login");
+                return RedirectToAction("Login", "Giris");
             }
             return View(kullanici);
-
         }
         // GET: Kullanici/AdminKayit
         public ActionResult AdminKayit()
@@ -70,11 +88,15 @@ namespace CiftciEvi.Controllers
         [HttpPost]
         public ActionResult AdminKayit(Kullanici kullanici)
         {
-            if (ModelState.IsValid)
+            if (db.Kullanicilar.FirstOrDefault(p => p.Cep == kullanici.Cep) != null)
+            {
+                ModelState.AddModelError("Cep", "Bu numara başka bir kullanıcı tarafından kullanılmaktadır.");
+            }
+            else
             {
                 db.Kullanicilar.Add(kullanici);
                 db.SaveChanges();
-                return RedirectToAction("Login");
+                return RedirectToAction("Login", "Giris");
             }
             return View(kullanici);
 
