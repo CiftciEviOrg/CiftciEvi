@@ -109,6 +109,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\GirisController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KullaniciController.cs" />
@@ -154,9 +155,12 @@
     <Content Include="Views\Giris\Login.cshtml" />
     <Content Include="Views\Kullanici\Kayit.cshtml" />
     <Content Include="Views\Kullanici\KurumsalKayit.cshtml" />
-    <Content Include="Views\Kullanici\AdminKayit.cshtml" />
+    <Content Include="Views\Admin\Kayit.cshtml" />
     <Content Include="Views\Kullanici\List.cshtml" />
     <Content Include="Views\Kullanici\Delete.cshtml" />
+    <Content Include="Views\Kullanici\Guncelle.cshtml" />
+    <Content Include="Views\Kullanici\KurumsalGuncelle.cshtml" />
+    <Content Include="Views\Admin\Guncelle.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

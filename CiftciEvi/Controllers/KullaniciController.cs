@@ -42,7 +42,7 @@ namespace CiftciEvi.Controllers
         {
             if (ModelState.IsValid)
             {
-                if (db.Kullanicilar.FirstOrDefault(p => p.Cep == kullanici.Cep) !=null)
+                if (db.Kullanicilar.FirstOrDefault(p => p.Cep == kullanici.Cep) != null)
                 {
                     ModelState.AddModelError("Cep", "Bu numara başka bir kullanıcı tarafından kullanılmaktadır.");
                 }
@@ -52,7 +52,7 @@ namespace CiftciEvi.Controllers
                     db.SaveChanges();
                     return RedirectToAction("Login", "Giris");
                 }
-               
+
             }
             return View(kullanici);
 
@@ -79,51 +79,87 @@ namespace CiftciEvi.Controllers
             }
             return View(kullanici);
         }
-        // GET: Kullanici/AdminKayit
-        public ActionResult AdminKayit()
-        {
-            return View();
-        }
-
-        // POST: Kullanici/AdminKayit   Kurumsal Üyelik
-        [HttpPost]
-        public ActionResult AdminKayit(Kullanici kullanici)
-        {
-            if (db.Kullanicilar.FirstOrDefault(p => p.Cep == kullanici.Cep) != null)
-            {
-                ModelState.AddModelError("Cep", "Bu numara başka bir kullanıcı tarafından kullanılmaktadır.");
-            }
-            else
-            {
-                db.Kullanicilar.Add(kullanici);
-                db.SaveChanges();
-                return RedirectToAction("Login", "Giris");
-            }
-            return View(kullanici);
-
-        }
+        
 
         // GET: Kullanici/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult Guncelle(int? id)
         {
-            return View();
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Kullanici kullanici = db.Kullanicilar.Find(id);
+            if (kullanici == null)
+            {
+                return HttpNotFound();
+            }
+            return View(kullanici);
         }
 
         // POST: Kullanici/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Guncelle(Kullanici kullanici)
         {
-            try
+            if (ModelState.IsValid)
             {
-                // TODO: Add update logic here
+                var entity = db.Kullanicilar.Find(kullanici.Id);
+                if (entity != null)
+                {
+                    entity.Adi = kullanici.Adi;
+                    entity.Soyadi = kullanici.Soyadi;
+                    entity.Cep = kullanici.Cep;
+                    entity.Email = kullanici.Email;
+                    entity.Sifre = kullanici.Sifre;
+                    entity.SifreConfirm = kullanici.SifreConfirm;
+                    db.SaveChanges();
+                    TempData["Duzenlendi"] = entity;
+                    return RedirectToAction("Index");
+                }
+            }
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            return RedirectToAction("Index");
         }
+
+        // GET: Kullanici/Edit/5
+        public ActionResult KurumsalGuncelle(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Kullanici kullanici = db.Kullanicilar.Find(id);
+            if (kullanici == null)
+            {
+                return HttpNotFound();
+            }
+            return View(kullanici);
+        }
+
+        // POST: Kullanici/Edit/5
+        [HttpPost]
+        public ActionResult KurumsalGuncelle(Kullanici kullanici)
+        {
+            if (ModelState.IsValid)
+            {
+                var entity = db.Kullanicilar.Find(kullanici.Id);
+                if (entity != null)
+                {
+                    entity.Adi = kullanici.Adi;
+                    entity.Soyadi = kullanici.Soyadi;
+                    entity.Cep = kullanici.Cep;
+                    entity.Email = kullanici.Email;
+                    entity.Sifre = kullanici.Sifre;
+                    entity.SifreConfirm = kullanici.SifreConfirm;
+                    db.SaveChanges();
+                    TempData["Duzenlendi"] = entity;
+                    return RedirectToAction("Index");
+                }
+            }
+
+            return RedirectToAction("Index");
+        }
+
+        
 
         // GET: Kullanici/Delete/5
         public ActionResult Delete(int? id)
