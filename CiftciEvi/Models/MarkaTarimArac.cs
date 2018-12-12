@@ -8,7 +8,7 @@ namespace CiftciEvi.Models
     public class MarkaTarimArac
     {
         public int Id { get; set; }
-        public string Marka { get; set; }
+        public string MarkaAdi { get; set; }
 
     }
 }
