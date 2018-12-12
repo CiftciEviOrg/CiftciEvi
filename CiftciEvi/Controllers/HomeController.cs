@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CiftciEvi.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,10 +9,12 @@ namespace CiftciEvi.Controllers
 {
     public class HomeController : Controller
     {
-        // GET: Home
+        DataContext db = new DataContext();
+        // GET: Home //Anasayfa metodu
         public ActionResult Index()
         {
-            return View();
+            var urunler = db.Kullanicilar.ToList();
+            return View(urunler);
         }
     }
 }
