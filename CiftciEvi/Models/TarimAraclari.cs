@@ -15,7 +15,7 @@ namespace CiftciEvi.Models
         public MarkaTarimArac Marka { get; set; }
 
         public string Tipi { get; set; }
-        public int Model { get; set; }
+        public sbyte ModelYili { get; set; }
         public sbyte TekerlekSayisi { get; set; }
         public sbyte Vites { get; set; }
         public int MotorGucu { get; set; }

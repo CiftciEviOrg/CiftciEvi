@@ -136,6 +136,7 @@
     <Compile Include="Models\Resim.cs" />
     <Compile Include="Models\TarimAraclari.cs" />
     <Compile Include="Models\viewModel\loginModel.cs" />
+    <Compile Include="Models\VitesTarimArac.cs" />
     <Compile Include="Models\YorumDegerlendirme.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
