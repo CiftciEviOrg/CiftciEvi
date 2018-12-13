@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System.Data.Entity;
 using System.Web;
 using System.Web.Mvc;
 
@@ -12,9 +13,12 @@ namespace CiftciEvi.Controllers
     {
         private DataContext db = new DataContext();
         // GET: Kullanici
+        [Route("Profil")]
         public ActionResult Index()
         {
-            return View();
+            //bu kısımda kullancının profil bilgilerinin olduğu sayfa olacak.
+            var kullanici = db.Kullanicilar.Find(Convert.ToInt32(Session["uyeid"].ToString())); 
+            return View(kullanici);
         }
         public ActionResult List()
         {
@@ -24,10 +28,24 @@ namespace CiftciEvi.Controllers
 
 
 
-        // GET: Kullanici/Details/5
-        public ActionResult Details(int id)
+        // GET: Kullanici/Detay/5
+        public ActionResult Detay(int? id)
         {
-            return View();
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            var kullanici = db.Kullanicilar
+                                           .Include(i => i.Kurumsal)
+                                           .Include(i => i.Kurumsal.Il)
+                                           .Include(i => i.Kurumsal.Adres)
+                                           .FirstOrDefault(i => i.Id == id);
+            if (kullanici == null)
+            {
+                return HttpNotFound();
+            }
+
+            return View(kullanici);
         }
 
         // GET: Kullanici/Ekleme
@@ -63,6 +81,7 @@ namespace CiftciEvi.Controllers
             return View();
         }
 
+
         // POST: Kullanici/KurumsalKayit   Kurumsal Üyelik
         [HttpPost]
         public ActionResult KurumsalKayit(Kullanici kullanici)
@@ -73,13 +92,14 @@ namespace CiftciEvi.Controllers
             }
             else
             {
+                kullanici.KurumsalMi = true;
                 db.Kullanicilar.Add(kullanici);
                 db.SaveChanges();
                 return RedirectToAction("Login", "Giris");
             }
             return View(kullanici);
         }
-        
+
 
         // GET: Kullanici/Edit/5
         public ActionResult Guncelle(int? id)
@@ -89,6 +109,10 @@ namespace CiftciEvi.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Kullanici kullanici = db.Kullanicilar.Find(id);
+            if (kullanici.KurumsalMi)
+            {
+                return RedirectToAction("KurumsalGuncelle", new { id });
+            }
             if (kullanici == null)
             {
                 return HttpNotFound();
@@ -159,7 +183,7 @@ namespace CiftciEvi.Controllers
             return RedirectToAction("Index");
         }
 
-        
+
 
         // GET: Kullanici/Delete/5
         public ActionResult Delete(int? id)

@@ -1,0 +1,166 @@
+﻿@model CiftciEvi.Models.Kullanici
+
+@{
+    ViewBag.Title = "Detay";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@if (Model.KurumsalMi == false)
+{
+
+    <h3>Kullanıcı Detay</h3>
+    <div>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Adi)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Adi)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Soyadi)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Soyadi)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Email)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Email)
+            </dd>
+
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Cep)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Cep)
+            </dd>
+
+
+        </dl>
+    </div>
+
+
+}
+else
+{
+    <h2>Kurumsal Kayıt Detay</h2>
+    <div>
+        <h4>Kurumsal</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Adi)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Adi)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Soyadi)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Soyadi)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Email)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Email)
+            </dd>
+
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Cep)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Cep)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Kurumsal.FirmaAdi)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Kurumsal.FirmaAdi)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Kurumsal.FaaliyetAlani)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Kurumsal.FaaliyetAlani)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Kurumsal.TicariUnvan)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Kurumsal.TicariUnvan)
+            </dd>
+
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Kurumsal.SabitTel)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Kurumsal.SabitTel)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Kurumsal.FirmaAdi)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Kurumsal.FirmaAdi)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Kurumsal.IsletmeTuru)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Kurumsal.IsletmeTuru)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Kurumsal.Adres.AdresDetay) /
+                @Html.DisplayNameFor(model => model.Kurumsal.Adres.Ilce) /
+                @Html.DisplayNameFor(model => model.Kurumsal.Il)
+
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Kurumsal.Adres.AdresDetay) /
+                @Html.DisplayFor(model => model.Kurumsal.Adres.Ilce) /
+                @Html.DisplayFor(model => model.Kurumsal.Il)
+            </dd>
+
+        </dl>
+    </div>
+
+}
+
+
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
