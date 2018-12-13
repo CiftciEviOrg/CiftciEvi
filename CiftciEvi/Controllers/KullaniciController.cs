@@ -17,7 +17,8 @@ namespace CiftciEvi.Controllers
         public ActionResult Index()
         {
             //bu kısımda kullancının profil bilgilerinin olduğu sayfa olacak.
-            return View();
+            var kullanici = db.Kullanicilar.Find(Convert.ToInt32(Session["uyeid"].ToString())); 
+            return View(kullanici);
         }
         public ActionResult List()
         {
