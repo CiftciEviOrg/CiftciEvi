@@ -14,7 +14,9 @@ namespace CiftciEvi.Models
         public DbSet<MarkaTarimArac> markaTarimAraclari { get; set; }
 
         public DbSet<VitesTarimArac> vitesTarimAraclari { get; set; }
-        
+
+        public DbSet<Il> iller { get; set; }
+
 
     }
 }
