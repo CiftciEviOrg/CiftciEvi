@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System.Data.Entity;
 using System.Web;
 using System.Web.Mvc;
 
@@ -33,6 +34,7 @@ namespace CiftciEvi.Controllers
             }
             else
             {
+                kullanici.Adminmi = true;
                 db.Kullanicilar.Add(kullanici);
                 db.SaveChanges();
                 return RedirectToAction("Login", "Giris");
@@ -79,6 +81,24 @@ namespace CiftciEvi.Controllers
             }
 
             return RedirectToAction("Index");
+        }
+
+
+        // GET: Admin/Detay/5
+        public ActionResult Detay(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            var kullanici = db.Kullanicilar.FirstOrDefault(i => i.Id == id);
+
+            if (kullanici == null)
+            {
+                return HttpNotFound();
+            }
+
+            return View(kullanici);
         }
 
 

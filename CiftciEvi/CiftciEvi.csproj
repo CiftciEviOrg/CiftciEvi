@@ -161,6 +161,8 @@
     <Content Include="Views\Kullanici\Guncelle.cshtml" />
     <Content Include="Views\Kullanici\KurumsalGuncelle.cshtml" />
     <Content Include="Views\Admin\Guncelle.cshtml" />
+    <Content Include="Views\Kullanici\Detay.cshtml" />
+    <Content Include="Views\Admin\Detay.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
