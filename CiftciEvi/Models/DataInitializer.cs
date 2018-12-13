@@ -10,9 +10,7 @@ namespace CiftciEvi.Models
     {
         public override void InitializeDatabase(DataContext context)
         {
-
-
-
+            
             #region "Tarim Aaçlari için markalar|MarkaTarimAraclari Model"
             //Tarim Aaçlari için marka dizisi
             string[] markalarDizi = {"Agrifarm","Agripower", "Antonio Carraro","Artrak Superline", "Aslan Traktör",
@@ -27,10 +25,10 @@ namespace CiftciEvi.Models
 
             for (int i = 0; i < markalarDizi.Length; i++)
             {
-                String marka = markalarDizi[i].ToString();
-                context.markaTarimAraclari.Add(new MarkaTarimArac
+                String il = markalarDizi[i].ToString();
+                context.MarkaTarimAraclari.Add(new MarkaTarimArac
                 {
-                    MarkaAdi = marka
+                    MarkaAdi = il
                 });
 
             }
@@ -43,10 +41,10 @@ namespace CiftciEvi.Models
 
             for (int i = 0; i < viteslerDizi.Length; i++)
             {
-                String vites = viteslerDizi[i].ToString();
-                context.vitesTarimAraclari.Add(new VitesTarimArac
+                String il = viteslerDizi[i].ToString();
+                context.VitesTarimAraclari.Add(new VitesTarimArac
                 {
-                    VitesTip = vites
+                    VitesTip = il
                 });
 
             }
@@ -81,10 +79,10 @@ namespace CiftciEvi.Models
                     //2: 4x4
 	             
                 new TarimAraclari(){
-                    Marka =context.markaTarimAraclari.FirstOrDefault(p=>p.Id==1),
+                    Marka =context.MarkaTarimAraclari.FirstOrDefault(p=>p.Id==1),
                     Tipi=1,
                     ModelYili=1998,
-                    Vites=context.vitesTarimAraclari.FirstOrDefault(p=>p.Id==2),
+                    Vites=context.VitesTarimAraclari.FirstOrDefault(p=>p.Id==2),
                     MotorGucuHP=110,
                     CalismaSaati=1000,
                     KabinTipi=1,
@@ -92,10 +90,10 @@ namespace CiftciEvi.Models
                 },
 
                 new TarimAraclari(){
-                    Marka =context.markaTarimAraclari.FirstOrDefault(p=>p.Id==10),
+                    Marka =context.MarkaTarimAraclari.FirstOrDefault(p=>p.Id==10),
                     Tipi=2,
                     ModelYili=1998,
-                    Vites=context.vitesTarimAraclari.FirstOrDefault(p=>p.Id==4),
+                    Vites=context.VitesTarimAraclari.FirstOrDefault(p=>p.Id==4),
                     MotorGucuHP=80,
                     CalismaSaati=1200,
                     KabinTipi=4,
@@ -116,9 +114,9 @@ namespace CiftciEvi.Models
                     //4: Yok
 
                 new TarimAraclari(){
-                    Marka =context.markaTarimAraclari.FirstOrDefault(p=>p.Id==1),
+                    Marka =context.MarkaTarimAraclari.FirstOrDefault(p=>p.Id==1),
                     ModelYili=1998,
-                    Vites=context.vitesTarimAraclari.FirstOrDefault(p=>p.Id==2),
+                    Vites=context.VitesTarimAraclari.FirstOrDefault(p=>p.Id==2),
                     MotorGucuHP=110,
                     CalismaSaati=2000,
                     KabinTipi=1,
@@ -128,7 +126,7 @@ namespace CiftciEvi.Models
                 new TarimAraclari(){
                     //Burada marka simdilik boyledir.
                     //ara modeller olustugu zaman Ana modelde marka stringe donecektir
-                    Marka=context.markaTarimAraclari.FirstOrDefault(p=>p.Id==4),
+                    Marka=context.MarkaTarimAraclari.FirstOrDefault(p=>p.Id==4),
                     Tipi =1,
                         //Controller tarafında kontrol edilip
                             //Römork
@@ -143,7 +141,7 @@ namespace CiftciEvi.Models
                 {
                     //Burada marka simdilik boyledir.
                     //ara modeller olustugu zaman Ana modelde marka stringe donecektir
-                    Marka=context.markaTarimAraclari.FirstOrDefault(p=>p.Id==4),
+                    Marka=context.MarkaTarimAraclari.FirstOrDefault(p=>p.Id==4),
                     ModelYili=2005
 
                 }
@@ -167,7 +165,7 @@ namespace CiftciEvi.Models
             for (int i = 0; i < illerdizi.Length; i++)
             {
                 String il = illerdizi[i].ToString();
-                context.iller.Add(new Il
+                context.Iller.Add(new Il
                 {
                     IlAdi = il
                 });
@@ -188,175 +186,8 @@ namespace CiftciEvi.Models
             };
             #endregion
 
-            #region "Agac"
-            string[] agaclardizi = {
-                "Erik","Şeftali","Kayısı","Kiraz","Vişne","Karayemiş","Kızılcık","İğde","Yemişen","Kuşburnu",
-                "Elma","Armut","Ayva","Ünnap","Alıç","Kocayemiş","Muşmula","Ceviz","Badem",
-                "Fındık","Antepfıstığı","Kestane","Çamfıstığı","Üzüm","Çilek","Dut","Karadut","Ahududu",
-                "Böğürtlen","Frenküzümü","Bektaşiüzümü","Mersin","Gilaboru","Kırmızıdalçileği","Limon",
-                "Portakal","Mandarin","AltıntopGreyfurt)","Turunç","Şadok","Laym","Bergamot","Kamkat",
-                "Kırmızılimon","Tatlılimon","Nar","Trabzonhurması","İncir","Kivi","Pikan","Artvinhurması",
-                "Zeytin","Yenidünya","Avokado","Fejoa","Hintinciri","Ağaçkavunu","Keçiboynuzu","Mango","Guava","Papaya",
-                "Liçi","Anona","Muz","Ananas","Hurma"
-            };
-
-
-            for (int i = 0; i < agaclardizi.Length; i++)
-            {
-                String agac = agaclardizi[i].ToString();
-                context.agaclar.Add(new Agac
-                {
-                    AgacAdi = agac
-                });
-
-            }
-            #endregion
-
-            #region "Arazi Modeli"
-            //Mkare: int: kullanıcıdan alınacak
-            //Su: sbyte: controller tarafıda kontrol edilecek
-            //Salma sulama
-            //Tava (göllendirme)
-            //Karık sulama
-            //Mini sprinkler
-            //Damla sulama
-            //Susuz
-            //Agac: Agac modelinde agaç isimleri var oradan gelecek
-            //AgacCins: String: Kullanıcıdan alınacak
-            //
-            List<Arazi> araziler = new List<Arazi>()
-            {
-                new Arazi(){Mkare=2500,Su=3, AgacVarMi=true,Agac=context.agaclar.FirstOrDefault(p=>p.Id==5) , AgacCins="Bir cins", Adet=56},
-                new Arazi(){Mkare=30000, Su=6, AgacVarMi=false }
-
-            };
-            #endregion
-
-            #region "Sonsuz Kategori"
-            List<Kategori> kategoriler = new List<Kategori>() {
-                new Kategori(){KategoriAdi="Tarım Araçları	",KID=0},
-                new Kategori(){KategoriAdi="Arazi",KID=  0},
-                new Kategori(){KategoriAdi="HizmetVer",KID=  0   },
-                new Kategori(){KategoriAdi="İş İlanı",KID=  0   },
-                new Kategori(){KategoriAdi="HayvanlarAlemi",KID=  0   },
-                new Kategori(){KategoriAdi="Traktör",KID=  1   },
-                new Kategori(){KategoriAdi="Toprak & Toprak İşleme",KID=  1   },
-                new Kategori(){KategoriAdi="Hasat & Harman",KID=  1   },
-                new Kategori(){KategoriAdi="Bitki & Bakım",KID=  1   },
-                new Kategori(){KategoriAdi="Ekim & Dikim",KID=  1   },
-                new Kategori(){KategoriAdi="Gübreleme",KID=  1   },
-                new Kategori(){KategoriAdi="Sulama",KID=  1   },
-                new Kategori(){KategoriAdi="Hayvancılık",KID=  1   },
-                new Kategori(){KategoriAdi="Taşıma",KID=  1   },
-                new Kategori(){KategoriAdi="Ataşman & Yedek Parça	",KID=  1   },
-                new Kategori(){KategoriAdi="Arazi",KID=  2   },
-                new Kategori(){KategoriAdi="Tarla",KID=  2   },
-                new Kategori(){KategoriAdi="Bağ/ Bahçe",KID=  2   },
-                new Kategori(){KategoriAdi="Diğer",KID=  2   },
-                new Kategori(){KategoriAdi="Tarim Hizmeti",KID=  3   },
-                new Kategori(){KategoriAdi="Hayvancılık İşi Hizmeti",KID=  3   },
-                new Kategori(){KategoriAdi="Kümes Hayvanları İşi Hizmeti",KID=  3   },
-                new Kategori(){KategoriAdi="Arıcılık İşi Hizmeti",KID=  3   },
-                new Kategori(){KategoriAdi="Bahçıvanlık Hizmeti",KID=  3   },
-                new Kategori(){KategoriAdi="Tarim İşi",KID=  4   },
-                new Kategori(){KategoriAdi="Hayvancılık İşi",KID=  4   },
-                new Kategori(){KategoriAdi="Kümes Hayvancılığı İşi",KID=  4   },
-                new Kategori(){KategoriAdi="Arıcılık İşi",KID=  4   },
-                new Kategori(){KategoriAdi="Bahçıvan İşi",KID=  4   },
-                new Kategori(){KategoriAdi="Büyükbaş",KID=  5   },
-                new Kategori(){KategoriAdi="Küçüşbaş",KID=  5   },
-                new Kategori(){KategoriAdi="Kümes Hayvanları",KID=  5   },
-                new Kategori(){KategoriAdi="Böcekler",KID=  5   },
-                new Kategori(){KategoriAdi="Ağaç Sökme Makinesi",KID=  7   },
-                new Kategori(){KategoriAdi="Çapa Makinesi",KID=  7   },
-                new Kategori(){KategoriAdi="Diskaro",KID=  7   },
-                new Kategori(){KategoriAdi="Döküm Merdane",KID=  7   },
-                new Kategori(){KategoriAdi="Kültivatör",KID=  7   },
-                new Kategori(){KategoriAdi="Lazer Tesviye",KID=  7   },
-                new Kategori(){KategoriAdi="Odun Kırma Makinesi",KID=  7   },
-                new Kategori(){KategoriAdi="Pulluk",KID=  7   },
-                new Kategori(){KategoriAdi="Rotovatör",KID=  7   },
-                new Kategori(){KategoriAdi="Sap Parçalama Makinesi",KID=  7   },
-                new Kategori(){KategoriAdi="Tırmık",KID=  7   },
-                new Kategori(){KategoriAdi="Toprak & Çim Havalandırma",KID=  7   },
-                new Kategori(){KategoriAdi="Toprak Burgu Makinesi",KID=  7   },
-                new Kategori(){KategoriAdi="Toprak Öğütme Makinesi",KID=  7   },
-                new Kategori(){KategoriAdi="Biçerdöver",KID=  8   },
-                new Kategori(){KategoriAdi="Ağaç Silkeleme Makinesi",KID=  8   },
-                new Kategori(){KategoriAdi="Balya & Silaj",KID=  8   },
-                new Kategori(){KategoriAdi="Fındık Patoz & Toplama",KID=  8   },
-                new Kategori(){KategoriAdi="Fıstık Hasat Makinesi",KID=  8   },
-                new Kategori(){KategoriAdi="Harman Makinesi",KID=  8   },
-                new Kategori(){KategoriAdi="Hububat Kurutma Makinesi",KID=  8   },
-                new Kategori(){KategoriAdi="Meyve & Zeytin Toplama",KID=  8   },
-                new Kategori(){KategoriAdi="Mısır Hasat Tablası",KID=  8   },
-                new Kategori(){KategoriAdi="Mısır Silaj Makinesi",KID=  8   },
-                new Kategori(){KategoriAdi="Pamuk Toplama Makinesi",KID=  8   },
-                new Kategori(){KategoriAdi="Pancar Sökme Makinesi",KID=  8   },
-                new Kategori(){KategoriAdi="Patates & Soğan Sökme",KID=  8   },
-                new Kategori(){KategoriAdi="Pirinç Hasat Makinesi",KID=  8   },
-                new Kategori(){KategoriAdi="Saman Makinesi",KID=  8   },
-                new Kategori(){KategoriAdi="Silaj Paketleme Makinesi",KID=  8   },
-                new Kategori(){KategoriAdi="Tohum Eleme Makinesi",KID=  8   },
-                new Kategori(){KategoriAdi="Zeytin Eleme Makinesi",KID=  8   },
-                new Kategori(){KategoriAdi="Budama Makinesi",KID=  9   },
-                new Kategori(){KategoriAdi="Çayır, Çim & Ot Biçme",KID=  9   },
-                new Kategori(){KategoriAdi="Orak & Tırpan Makinesi",KID=  9   },
-                new Kategori(){KategoriAdi="Pelet Makinesi",KID=  9   },
-                new Kategori(){KategoriAdi="Talaş Hazırlama",KID=  9   },
-                new Kategori(){KategoriAdi="Üfleme Toplama Makinesi",KID=  9   },
-                new Kategori(){KategoriAdi="Yaprak & Dal Öğütme Makinesi",KID=  9   },
-                new Kategori(){KategoriAdi="Ekim Makinesi",KID=  10  },
-                new Kategori(){KategoriAdi="Patates & Soğan Ekme",KID=  10  },
-                new Kategori(){KategoriAdi="Tütün Dikim Makinesi",KID=  10  },
-                new Kategori(){KategoriAdi="Gübre Dağıtma & Serpme",KID=  11  },
-                new Kategori(){KategoriAdi="Gübre Kurutma Makinesi",KID=  11  },
-                new Kategori(){KategoriAdi="Gübre Parçalama",KID=  11  },
-                new Kategori(){KategoriAdi="Gübre Sıyırıcı Sistemi",KID=  11  },
-                new Kategori(){KategoriAdi="Gübre Tankı",KID=  12  },
-                new Kategori(){KategoriAdi="Pancar Motoru",KID=  12  },
-                new Kategori(){KategoriAdi="Sulama Makinesi",KID=  12  },
-                new Kategori(){KategoriAdi="Su Pompası & Motoru",KID=  12  },
-                new Kategori(){KategoriAdi="Hayvan Kaşıma Fırçası",KID=  13  },
-                new Kategori(){KategoriAdi="Süt Sağma Makinesi",KID=  13  },
-                new Kategori(){KategoriAdi="Yem Ezme & Kırma",KID=  13  },
-                new Kategori(){KategoriAdi="Yem Karma Makinesi",KID=  13  },
-                new Kategori(){KategoriAdi="Yem Üretim Makinesi",KID=  13  },
-                new Kategori(){KategoriAdi="Römork",KID=  14  },
-                new Kategori(){KategoriAdi="Konveyör, Bant & Helezon",KID=  14  },
-                new Kategori(){KategoriAdi="Tomruk Çekici Vinç",KID=  14  },
-                new Kategori(){KategoriAdi="At",KID=  30  },
-                new Kategori(){KategoriAdi="Boğa",KID=  30  },
-                new Kategori(){KategoriAdi="Deve",KID=  30  },
-                new Kategori(){KategoriAdi="Eşek",KID=  30  },
-                new Kategori(){KategoriAdi="İnek",KID=  30  },
-                new Kategori(){KategoriAdi="Lama",KID=  30  },
-                new Kategori(){KategoriAdi="Manda",KID=  30  },
-                new Kategori(){KategoriAdi="Keçi",KID=  31  },
-                new Kategori(){KategoriAdi="Koç",KID=  31  },
-                new Kategori(){KategoriAdi="Koyun",KID=  31  },
-                new Kategori(){KategoriAdi="Kuzu",KID=  31  },
-                new Kategori(){KategoriAdi="Deve Kuşu",KID=  32  },
-                new Kategori(){KategoriAdi="Güvercin",KID=  32  },
-                new Kategori(){KategoriAdi="Hindi",KID=  32  },
-                new Kategori(){KategoriAdi="Horoz",KID=  32  },
-                new Kategori(){KategoriAdi="Kaz",KID=  32  },
-                new Kategori(){KategoriAdi="Kuğu",KID=  32  },
-                new Kategori(){KategoriAdi="Ördek",KID=  32  },
-                new Kategori(){KategoriAdi="Tavuk",KID=  32  },
-                new Kategori(){KategoriAdi="Tavus Kuşu",KID=  32  },
-                new Kategori(){KategoriAdi="Kuluçkalık Yumurta",KID=  32  },
-                new Kategori(){KategoriAdi="Arı",KID=  33  },
-                new Kategori(){KategoriAdi="İpek Böceği",KID=  33  }
-            };
-            #endregion
-
-
             context.SaveChanges();
             base.InitializeDatabase(context);
         }
     }
 }
-
-
-

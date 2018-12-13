@@ -11,11 +11,12 @@ namespace CiftciEvi.Models
     {
         public DbSet<Kullanici> Kullanicilar { get; set; }
 
-        public DbSet<MarkaTarimArac> markaTarimAraclari { get; set; }
+        public DbSet<MarkaTarimArac> MarkaTarimAraclari { get; set; }
 
-        public DbSet<VitesTarimArac> vitesTarimAraclari { get; set; }
+        public DbSet<VitesTarimArac> VitesTarimAraclari { get; set; }
 
-        public DbSet<Il> iller { get; set; }
+        public DbSet<Il> Iller { get; set; }
+
 
         public DbSet<Agac> agaclar { get; set; }
 
