@@ -10,9 +10,7 @@ namespace CiftciEvi.Models
     {
         public override void InitializeDatabase(DataContext context)
         {
-
-
-
+            
             #region "Tarim Aaçlari için markalar|MarkaTarimAraclari Model"
             //Tarim Aaçlari için marka dizisi
             string[] markalarDizi = {"Agrifarm","Agripower", "Antonio Carraro","Artrak Superline", "Aslan Traktör",
@@ -28,7 +26,7 @@ namespace CiftciEvi.Models
             for (int i = 0; i < markalarDizi.Length; i++)
             {
                 String il = markalarDizi[i].ToString();
-                context.markaTarimAraclari.Add(new MarkaTarimArac
+                context.MarkaTarimAraclari.Add(new MarkaTarimArac
                 {
                     MarkaAdi = il
                 });
@@ -44,7 +42,7 @@ namespace CiftciEvi.Models
             for (int i = 0; i < viteslerDizi.Length; i++)
             {
                 String il = viteslerDizi[i].ToString();
-                context.vitesTarimAraclari.Add(new VitesTarimArac
+                context.VitesTarimAraclari.Add(new VitesTarimArac
                 {
                     VitesTip = il
                 });
@@ -81,10 +79,10 @@ namespace CiftciEvi.Models
                     //2: 4x4
 	             
                 new TarimAraclari(){
-                    Marka =context.markaTarimAraclari.FirstOrDefault(p=>p.Id==1),
+                    Marka =context.MarkaTarimAraclari.FirstOrDefault(p=>p.Id==1),
                     Tipi=1,
                     ModelYili=1998,
-                    Vites=context.vitesTarimAraclari.FirstOrDefault(p=>p.Id==2),
+                    Vites=context.VitesTarimAraclari.FirstOrDefault(p=>p.Id==2),
                     MotorGucuHP=110,
                     CalismaSaati=1000,
                     KabinTipi=1,
@@ -92,10 +90,10 @@ namespace CiftciEvi.Models
                 },
 
                 new TarimAraclari(){
-                    Marka =context.markaTarimAraclari.FirstOrDefault(p=>p.Id==10),
+                    Marka =context.MarkaTarimAraclari.FirstOrDefault(p=>p.Id==10),
                     Tipi=2,
                     ModelYili=1998,
-                    Vites=context.vitesTarimAraclari.FirstOrDefault(p=>p.Id==4),
+                    Vites=context.VitesTarimAraclari.FirstOrDefault(p=>p.Id==4),
                     MotorGucuHP=80,
                     CalismaSaati=1200,
                     KabinTipi=4,
@@ -116,9 +114,9 @@ namespace CiftciEvi.Models
                     //4: Yok
 
                 new TarimAraclari(){
-                    Marka =context.markaTarimAraclari.FirstOrDefault(p=>p.Id==1),
+                    Marka =context.MarkaTarimAraclari.FirstOrDefault(p=>p.Id==1),
                     ModelYili=1998,
-                    Vites=context.vitesTarimAraclari.FirstOrDefault(p=>p.Id==2),
+                    Vites=context.VitesTarimAraclari.FirstOrDefault(p=>p.Id==2),
                     MotorGucuHP=110,
                     CalismaSaati=2000,
                     KabinTipi=1,
@@ -128,7 +126,7 @@ namespace CiftciEvi.Models
                 new TarimAraclari(){
                     //Burada marka simdilik boyledir.
                     //ara modeller olustugu zaman Ana modelde marka stringe donecektir
-                    Marka=context.markaTarimAraclari.FirstOrDefault(p=>p.Id==4),
+                    Marka=context.MarkaTarimAraclari.FirstOrDefault(p=>p.Id==4),
                     Tipi =1,
                         //Controller tarafında kontrol edilip
                             //Römork
@@ -143,7 +141,7 @@ namespace CiftciEvi.Models
                 {
                     //Burada marka simdilik boyledir.
                     //ara modeller olustugu zaman Ana modelde marka stringe donecektir
-                    Marka=context.markaTarimAraclari.FirstOrDefault(p=>p.Id==4),
+                    Marka=context.MarkaTarimAraclari.FirstOrDefault(p=>p.Id==4),
                     ModelYili=2005
 
                 }
@@ -167,7 +165,7 @@ namespace CiftciEvi.Models
             for (int i = 0; i < illerdizi.Length; i++)
             {
                 String il = illerdizi[i].ToString();
-                context.iller.Add(new Il
+                context.Iller.Add(new Il
                 {
                     IlAdi = il
                 });
