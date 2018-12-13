@@ -17,6 +17,8 @@ namespace CiftciEvi.Models
 
         public DbSet<Il> iller { get; set; }
 
+        public DbSet<Agac> agaclar { get; set; }
+
 
     }
 }

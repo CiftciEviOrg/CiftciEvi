@@ -10,7 +10,6 @@ namespace CiftciEvi.Models
     {
         public int Id { get; set; }
         public string AgacAdi { get; set; }
-        public string Cins { get; set; }
-        public int Adet { get; set; }
+        
     }
 }

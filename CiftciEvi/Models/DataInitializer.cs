@@ -27,10 +27,10 @@ namespace CiftciEvi.Models
 
             for (int i = 0; i < markalarDizi.Length; i++)
             {
-                String il = markalarDizi[i].ToString();
+                String marka = markalarDizi[i].ToString();
                 context.markaTarimAraclari.Add(new MarkaTarimArac
                 {
-                    MarkaAdi = il
+                    MarkaAdi = marka
                 });
 
             }
@@ -43,10 +43,10 @@ namespace CiftciEvi.Models
 
             for (int i = 0; i < viteslerDizi.Length; i++)
             {
-                String il = viteslerDizi[i].ToString();
+                String vites = viteslerDizi[i].ToString();
                 context.vitesTarimAraclari.Add(new VitesTarimArac
                 {
-                    VitesTip = il
+                    VitesTip = vites
                 });
 
             }
@@ -185,6 +185,50 @@ namespace CiftciEvi.Models
 
                 //Kategoriden- Küçükbaş-Koç Geldiği varsılayarak
                 new Hayvanlar(){Tip="Besilik",Cins="Holştayn",Yas=3,Cinsiyet=true,TopluSatis=false}
+            };
+            #endregion
+
+            #region "Agac"
+            string[] agaclardizi = {
+                "Erik","Şeftali","Kayısı","Kiraz","Vişne","Karayemiş","Kızılcık","İğde","Yemişen","Kuşburnu",
+                "Elma","Armut","Ayva","Ünnap","Alıç","Kocayemiş","Muşmula","Ceviz","Badem",
+                "Fındık","Antepfıstığı","Kestane","Çamfıstığı","Üzüm","Çilek","Dut","Karadut","Ahududu",
+                "Böğürtlen","Frenküzümü","Bektaşiüzümü","Mersin","Gilaboru","Kırmızıdalçileği","Limon",
+                "Portakal","Mandarin","AltıntopGreyfurt)","Turunç","Şadok","Laym","Bergamot","Kamkat",
+                "Kırmızılimon","Tatlılimon","Nar","Trabzonhurması","İncir","Kivi","Pikan","Artvinhurması",
+                "Zeytin","Yenidünya","Avokado","Fejoa","Hintinciri","Ağaçkavunu","Keçiboynuzu","Mango","Guava","Papaya",
+                "Liçi","Anona","Muz","Ananas","Hurma"
+            };
+
+
+            for (int i = 0; i < agaclardizi.Length; i++)
+            {
+                String agac = agaclardizi[i].ToString();
+                context.agaclar.Add(new Agac
+                {
+                    AgacAdi = agac
+                });
+
+            }
+            #endregion
+
+            #region "Arazi Modeli"
+            //Mkare: int: kullanıcıdan alınacak
+            //Su: sbyte: controller tarafıda kontrol edilecek
+                //Salma sulama
+                //Tava (göllendirme)
+                //Karık sulama
+                //Mini sprinkler
+                //Damla sulama
+                //Susuz
+            //Agac: Agac modelinde agaç isimleri var oradan gelecek
+            //AgacCins: String: Kullanıcıdan alınacak
+            //
+            List<Arazi> araziler = new List<Arazi>()
+            {
+                new Arazi(){Mkare=2500,Su=3, AgacVarMi=true,Agac=context.agaclar.FirstOrDefault(p=>p.Id==5) , AgacCins="Bir cins", Adet=56},
+                new Arazi(){Mkare=30000, Su=6, AgacVarMi=false }
+                
             };
             #endregion
 
