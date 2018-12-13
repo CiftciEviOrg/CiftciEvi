@@ -151,7 +151,6 @@ namespace CiftciEvi.Models
             };
             #endregion
 
-
             #region "Il"
             string[] illerdizi = {"Adana", "Adıyaman", "Afyon", "Ağrı", "Amasya", "Ankara", "Antalya",
                 "Artvin", "Aydın", "Balıkesir", "Bilecik", "Bingöl", "Bitlis", "Bolu", "Burdur", "Bursa",
@@ -176,11 +175,18 @@ namespace CiftciEvi.Models
             }
             #endregion
 
+            #region "Hayvanlar Modeli"
+            List<Hayvanlar> hayvanlar = new List<Hayvanlar>() {
+                //büyükbaş-küçük baş ve alt kategorileri sonsuz kategori modelinden gelecektir..
+                //controller tarafında kategoriden gelen bilgiye göre listeler kontrol edilecek 
 
+                //Kategoriden- Büyükbaş-Dana Geldiği varsılayarak
+                new Hayvanlar(){Tip="Besilik",Cins="Holştayn",Yas=3,Cinsiyet=true,TopluSatis=false},
 
-
-
-
+                //Kategoriden- Küçükbaş-Koç Geldiği varsılayarak
+                new Hayvanlar(){Tip="Besilik",Cins="Holştayn",Yas=3,Cinsiyet=true,TopluSatis=false}
+            };
+            #endregion
 
             context.SaveChanges();
             base.InitializeDatabase(context);
