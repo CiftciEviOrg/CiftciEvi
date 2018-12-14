@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CiftciEvi.Models
 {
-    public class Hayvanlar
+    public class Hayvan
     {
 
         //Büyükbaş- küçük baş vs ve bunun altındaki şeyler sonsuz kategoriden gelecektir.

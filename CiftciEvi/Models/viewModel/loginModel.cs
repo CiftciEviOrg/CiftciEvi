@@ -11,12 +11,12 @@ namespace CiftciEvi.Models.viewModel
     {
         [Required(ErrorMessage = "Cep Telefonu Giriniz.")]
         [Phone]
-        public String Cep { get; set; }
+        public string Cep { get; set; }
 
 
         [Required(ErrorMessage = "Şifreyi Giriniz.")]
         [Display(Name = "Şifre")]
         [DataType(DataType.Password)]
-        public String Sifre { get; set; }
+        public string Sifre { get; set; }
     }
 }

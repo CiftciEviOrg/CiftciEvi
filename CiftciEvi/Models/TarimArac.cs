@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CiftciEvi.Models
 {
-    public class TarimAraclari
+    public class TarimArac
     {
         //Buradaki validasyonlar ara modellerde ayrı ayrı girilecektir.
         public int Id { get; set; }

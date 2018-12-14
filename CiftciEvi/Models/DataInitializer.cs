@@ -8,9 +8,9 @@ namespace CiftciEvi.Models
 {
     public class DataInitializer : DropCreateDatabaseIfModelChanges<DataContext>
     {
-        public override void InitializeDatabase(DataContext context)
+        protected override void Seed(DataContext context)
         {
-            
+
             #region "Tarim Aaçlari için markalar|MarkaTarimAraclari Model"
             //Tarim Aaçlari için marka dizisi
             string[] markalarDizi = {"Agrifarm","Agripower", "Antonio Carraro","Artrak Superline", "Aslan Traktör",
@@ -25,10 +25,10 @@ namespace CiftciEvi.Models
 
             for (int i = 0; i < markalarDizi.Length; i++)
             {
-                String il = markalarDizi[i].ToString();
+                String marka = markalarDizi[i].ToString();
                 context.MarkaTarimAraclari.Add(new MarkaTarimArac
                 {
-                    MarkaAdi = il
+                    MarkaAdi = marka
                 });
 
             }
@@ -41,17 +41,17 @@ namespace CiftciEvi.Models
 
             for (int i = 0; i < viteslerDizi.Length; i++)
             {
-                String il = viteslerDizi[i].ToString();
+                String vites = viteslerDizi[i].ToString();
                 context.VitesTarimAraclari.Add(new VitesTarimArac
                 {
-                    VitesTip = il
+                    VitesTip = vites
                 });
 
             }
             #endregion
 
             #region "TarımAraclari Model"
-            List<TarimAraclari> tarimAraclari = new List<TarimAraclari>()
+            List<TarimArac> tarimAraclari = new List<TarimArac>()
             {
                 #region "TRAKTOR"
                 //TRAKTÖR
@@ -78,7 +78,7 @@ namespace CiftciEvi.Models
                     //1: 4x2
                     //2: 4x4
 	             
-                new TarimAraclari(){
+                new TarimArac(){
                     Marka =context.MarkaTarimAraclari.FirstOrDefault(p=>p.Id==1),
                     Tipi=1,
                     ModelYili=1998,
@@ -89,7 +89,7 @@ namespace CiftciEvi.Models
                     CekisTipi=1
                 },
 
-                new TarimAraclari(){
+                new TarimArac(){
                     Marka =context.MarkaTarimAraclari.FirstOrDefault(p=>p.Id==10),
                     Tipi=2,
                     ModelYili=1998,
@@ -113,7 +113,7 @@ namespace CiftciEvi.Models
                     //3: Tente
                     //4: Yok
 
-                new TarimAraclari(){
+                new TarimArac(){
                     Marka =context.MarkaTarimAraclari.FirstOrDefault(p=>p.Id==1),
                     ModelYili=1998,
                     Vites=context.VitesTarimAraclari.FirstOrDefault(p=>p.Id==2),
@@ -123,7 +123,7 @@ namespace CiftciEvi.Models
                 },
                 #endregion
                 #region "Tasima"
-                new TarimAraclari(){
+                new TarimArac(){
                     //Burada marka simdilik boyledir.
                     //ara modeller olustugu zaman Ana modelde marka stringe donecektir
                     Marka=context.MarkaTarimAraclari.FirstOrDefault(p=>p.Id==4),
@@ -137,7 +137,7 @@ namespace CiftciEvi.Models
                 },
                 #endregion
                 #region "Diger"
-                new TarimAraclari()
+                new TarimArac()
                 {
                     //Burada marka simdilik boyledir.
                     //ara modeller olustugu zaman Ana modelde marka stringe donecektir
@@ -147,6 +147,10 @@ namespace CiftciEvi.Models
                 }
                 #endregion
             };
+            foreach (var item in tarimAraclari)
+            {
+                context.TarimAraclar.Add(item);
+            }
             #endregion
 
             #region "Il"
@@ -174,16 +178,20 @@ namespace CiftciEvi.Models
             #endregion
 
             #region "Hayvanlar Modeli"
-            List<Hayvanlar> hayvanlar = new List<Hayvanlar>() {
+            List<Hayvan> hayvanlar = new List<Hayvan>() {
                 //büyükbaş-küçük baş ve alt kategorileri sonsuz kategori modelinden gelecektir..
                 //controller tarafında kategoriden gelen bilgiye göre listeler kontrol edilecek 
 
                 //Kategoriden- Büyükbaş-Dana Geldiği varsılayarak
-                new Hayvanlar(){Tip="Besilik",Cins="Holştayn",Yas=3,Cinsiyet=true,TopluSatis=false},
+                new Hayvan(){Tip="Besilik",Cins="Holştayn",Yas=3,Cinsiyet=true,TopluSatis=false},
 
                 //Kategoriden- Küçükbaş-Koç Geldiği varsılayarak
-                new Hayvanlar(){Tip="Besilik",Cins="Holştayn",Yas=3,Cinsiyet=true,TopluSatis=false}
+                new Hayvan(){Tip="Besilik",Cins="Holştayn",Yas=3,Cinsiyet=true,TopluSatis=false}
             };
+            foreach (var item in hayvanlar)
+            {
+                context.Hayvanlar.Add(item);
+            }
             #endregion
 
             #region "Sonsuz Kategori"
@@ -303,11 +311,15 @@ namespace CiftciEvi.Models
                 new Kategori(){KategoriAdi="Arı",KID=  33  },
                 new Kategori(){KategoriAdi="İpek Böceği",KID=  33  }
             };
-            #endregion
 
+            foreach (var item in kategoriler)
+            {
+                context.Kategoriler.Add(item);
+            }
+            #endregion
             
             context.SaveChanges();
-            base.InitializeDatabase(context);
+            base.Seed(context);
         }
     }
 }
