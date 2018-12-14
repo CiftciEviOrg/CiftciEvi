@@ -97,7 +97,9 @@ namespace CiftciEvi.Models
                     MotorGucuHP=80,
                     CalismaSaati=1200,
                     KabinTipi=4,
-                    CekisTipi=4
+                    CekisTipi=4,
+                    Kategori=context.Kategoriler.FirstOrDefault(p=>p.Id==6)
+                    
                 },
                 #endregion
                 #region "BicerDover"
@@ -317,6 +319,7 @@ namespace CiftciEvi.Models
                 context.Kategoriler.Add(item);
             }
             #endregion
+
             
             context.SaveChanges();
             base.Seed(context);
