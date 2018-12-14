@@ -110,10 +110,14 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\AdresController.cs" />
+    <Compile Include="Controllers\AraziController.cs" />
     <Compile Include="Controllers\GirisController.cs" />
+    <Compile Include="Controllers\HayvanController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IlanController.cs" />
     <Compile Include="Controllers\KullaniciController.cs" />
+    <Compile Include="Controllers\TarimAracController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -174,7 +178,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Adres\" />
+    <Folder Include="Views\Arazi\" />
+    <Folder Include="Views\Hayvan\" />
     <Folder Include="Views\Ilan\" />
+    <Folder Include="Views\TarimArac\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
