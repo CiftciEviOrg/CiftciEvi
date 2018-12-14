@@ -14,16 +14,16 @@ namespace CiftciEvi.Models
         //Extra 8: Marka icin yeni bir model icab etti
         public MarkaTarimArac Marka { get; set; }
 
-        public sbyte Tipi { get; set; }
+        public int Tipi { get; set; }
         public int ModelYili { get; set; }
-        public sbyte TekerlekSayisi { get; set; }
+        public int TekerlekSayisi { get; set; }
 
         //Extra 10:Vites icin yeni bir model icab etti
         public VitesTarimArac Vites { get; set; }
         public int MotorGucuHP { get; set; }
         public int CalismaSaati { get; set; }
-        public sbyte KabinTipi { get; set; }
-        public sbyte CekisTipi { get; set; }
+        public int KabinTipi { get; set; }
+        public int CekisTipi { get; set; }
         public Kategori Kategori { get; set; }
     }
 }

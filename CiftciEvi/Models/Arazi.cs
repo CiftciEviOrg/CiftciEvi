@@ -16,7 +16,7 @@ namespace CiftciEvi.Models
         public int Mkare { get; set; }
 
         [Range(0,10,ErrorMessage ="Geçersiz Değer")]
-        public sbyte Su { get; set; }
+        public int Su { get; set; }
 
         public bool AgacVarMi { get; set; }
 
