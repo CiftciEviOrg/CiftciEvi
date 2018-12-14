@@ -15,7 +15,7 @@ namespace CiftciEvi.Models
         public string Tur { get; set; }
         [Required]
         public int Deneyim { get; set; }
-        public sbyte DegerlendirmePuan { get; set; } //sbyte
+        public int DegerlendirmePuan { get; set; } //sbyte
         public Kategori Kategori { get; set; }
     }
 }

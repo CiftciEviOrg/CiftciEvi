@@ -13,8 +13,8 @@ namespace CiftciEvi.Controllers
         // GET: Home //Anasayfa metodu
         public ActionResult Index()
         {
-            var urunler = db.Kullanicilar.ToList();
-            return View(urunler);
+            //var urunler = db.Kullanicilar.ToList();
+            return View(/*urunler*/);
         }
     }
 }

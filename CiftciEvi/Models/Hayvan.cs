@@ -16,7 +16,7 @@ namespace CiftciEvi.Models
         public string Cins { get; set; }//Holştayn- Yerli Kara vs..
 
         [Range(1, 40,ErrorMessage ="Yaş aralığı 1-40 olmalı")]
-        public sbyte Yas { get; set; }
+        public int Yas { get; set; }
         public bool Cinsiyet { get; set; }
         public bool TopluSatis { get; set; }
         public Kategori Kategori { get; set; }
