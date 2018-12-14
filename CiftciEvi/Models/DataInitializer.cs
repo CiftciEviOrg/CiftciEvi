@@ -25,7 +25,7 @@ namespace CiftciEvi.Models
 
             for (int i = 0; i < markalarDizi.Length; i++)
             {
-                String marka = markalarDizi[i].ToString();
+                string marka = markalarDizi[i].ToString();
                 context.MarkaTarimAraclari.Add(new MarkaTarimArac
                 {
                     MarkaAdi = marka
@@ -41,7 +41,7 @@ namespace CiftciEvi.Models
 
             for (int i = 0; i < viteslerDizi.Length; i++)
             {
-                String vites = viteslerDizi[i].ToString();
+                string vites = viteslerDizi[i].ToString();
                 context.VitesTarimAraclari.Add(new VitesTarimArac
                 {
                     VitesTip = vites
@@ -170,7 +170,7 @@ namespace CiftciEvi.Models
 
             for (int i = 0; i < illerdizi.Length; i++)
             {
-                String il = illerdizi[i].ToString();
+                string il = illerdizi[i].ToString();
                 context.Iller.Add(new Il
                 {
                     IlAdi = il
