@@ -142,6 +142,7 @@
     <Compile Include="Models\Onay.cs" />
     <Compile Include="Models\Resim.cs" />
     <Compile Include="Models\TarimArac.cs" />
+    <Compile Include="Models\viewModel\ilanViewModel.cs" />
     <Compile Include="Models\viewModel\loginModel.cs" />
     <Compile Include="Models\VitesTarimArac.cs" />
     <Compile Include="Models\YorumDegerlendirme.cs" />
