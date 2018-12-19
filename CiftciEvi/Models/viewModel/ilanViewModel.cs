@@ -9,9 +9,9 @@ namespace CiftciEvi.Models.viewModel
     public class ilanViewModel
     {
         public int UstKategoriId { get; set; }//SelectedCityId        
-        public int AltKAtegoriId { get; set; }//SelectedCountryId
+        public int AltKategoriId { get; set; }//SelectedCountryId
 
-        public SelectList UstKategori { get; set; }
-        public SelectList AltKategori { get; set; }
+        public SelectList UstKategoriData { get; set; } //CountryData
+        public SelectList AltKategoriData { get; set; } //CityData
     }
 }

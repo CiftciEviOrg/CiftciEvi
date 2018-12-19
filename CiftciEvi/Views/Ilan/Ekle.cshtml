@@ -1,0 +1,158 @@
+﻿@using CiftciEvi.Models.viewModel
+@model ilanViewModel
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-12">
+                <h2>DropDown Doldurma</h2>
+                <hr />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+
+                @using (Html.BeginForm())
+                {
+                    <div class="form-horizontal">
+
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">Kategori :</label>
+                            <div class="col-md-10">
+                                @Html.DropDownListFor(m => m.UstKategoriId, Model.UstKategoriData, "Lütfen Seçiniz", new { @class = "form-control dropdown" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">Alt Kategori :</label>
+                            <div class="col-md-10">
+                                @Html.DropDownListFor(m => m.AltKategoriId, Model.AltKategoriData, "Lütfen Seçiniz", new { @class = "form-control dropdown" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-10 col-md-offset-2">
+                                <button class="btn btn-success" type="submit">Send</button>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-10 col-md-offset-2">
+                                <div class="alert alert-info">
+                                    <b>Selected Country ID :</b> @Model.UstKategoriId<br />
+                                    <b>Selected City ID :</b> @Model.AltKategoriId
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                }
+
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+
+        $("#UstKategoriId").change(function () {
+
+            var ddlUstKategori = $(this);
+            var Id = ddlUstKategori.val();
+            var ddlAltKategori = $("#AltKategoriId");
+            if (Id != "" || Id != "-1") {
+
+                $("#AltKAtegoriId option").not(":first").remove();
+                ddlAltKategori.html("");
+                $.ajax({
+                    method: 'GET',
+                    url: '@Url.Action("GetCitiesByCountry", "Ilan")',
+                    data: {'Id':Id },
+                    dataType: 'json',
+                    success: function (result) {
+
+                        for (var i = 0; i < result.length; i++) {
+                            var altKategoriAdi = result[i].KategoriAdi;
+                            var altKategoriID = result[i].Id;                                ;
+                            var opt = $("<option></option>");
+
+                            opt.text(altKategoriAdi);
+                            opt.attr("value", altKategoriID);
+
+                            ddlAltKategori.append(opt);
+                        }
+                    }
+                });
+
+            }
+            else {
+            $("#AltKategoriId option").not(":first").remove();
+            }
+
+        });
+
+
+    </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+@*<script>
+
+        $("#UstKategoriId").change(function () {
+
+            var ddlUstKategori = $(this);
+            var Id = ddlUstKategori.val();
+            var ddlAltKategori = $("#AltKategoriId");
+            if (Id != "" || Id != "-1") {
+
+                $("#AltKAtegoriId option").not(":first").remove();
+                ddlAltKategori.html("");
+                $.ajax({
+                    method: 'GET',
+                    url: '@Url.Action("GetCitiesByCountry", "Ilan")',
+                    data: {'Id':Id },
+                    dataType: 'json',
+                    success: function (result) {
+
+                        for (var i = 0; i < result.length; i++) {
+                            var AltKategoriAdi = result[i].KategoriAdi;
+                            var altKategoriID = result[i].Id;                                ;
+                            var opt = $("<option></option>");
+
+                            opt.text(AltKategoriAdi);
+                            opt.attr("value", altKategoriID);
+
+                            ddlAltKategori.append(opt);
+                        }
+                    }
+                });
+
+            }
+            else {
+            $("#AltKategoriId option").not(":first").remove();
+            }
+
+        });
+
+
+</script>*@
