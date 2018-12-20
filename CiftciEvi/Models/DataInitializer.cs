@@ -98,7 +98,6 @@ namespace CiftciEvi.Models
                     CalismaSaati=1200,
                     KabinTipi=4,
                     CekisTipi=4,
-                    Kategori=context.Kategoriler.FirstOrDefault(p=>p.Id==6)
                     
                 },
                 #endregion

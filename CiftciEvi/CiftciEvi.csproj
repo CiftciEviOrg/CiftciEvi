@@ -132,6 +132,8 @@
     <Compile Include="Models\Durum.cs" />
     <Compile Include="Models\Gundem.cs" />
     <Compile Include="Models\Hayvan.cs" />
+    <Compile Include="Models\HayvanKategori.cs" />
+    <Compile Include="Models\HizmetveIsKategori.cs" />
     <Compile Include="Models\HizmetVer.cs" />
     <Compile Include="Models\Il.cs" />
     <Compile Include="Models\Ilan.cs" />
@@ -145,6 +147,7 @@
     <Compile Include="Models\Onay.cs" />
     <Compile Include="Models\Resim.cs" />
     <Compile Include="Models\TarimArac.cs" />
+    <Compile Include="Models\TarimAracKategori.cs" />
     <Compile Include="Models\viewModel\ilanViewModel.cs" />
     <Compile Include="Models\viewModel\loginModel.cs" />
     <Compile Include="Models\VitesTarimArac.cs" />
@@ -175,6 +178,7 @@
     <Content Include="Views\Ilan\Ekle.cshtml" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+    <Content Include="Views\Ilan\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

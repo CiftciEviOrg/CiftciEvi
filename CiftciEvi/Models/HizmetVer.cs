@@ -17,5 +17,6 @@ namespace CiftciEvi.Models
         public int Deneyim { get; set; }
         public int DegerlendirmePuan { get; set; } //sbyte
         public Kategori Kategori { get; set; }
+        public Ilan IlanId { get; set; }
     }
 }
