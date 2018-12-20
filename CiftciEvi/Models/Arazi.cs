@@ -25,7 +25,7 @@ namespace CiftciEvi.Models
         public string AgacCins { get; set; }
 
         public int Adet { get; set; }
-        public int AraziKategori { get; set; }
-        public Ilan IlanId { get; set; }
+
+        public Kategori Kategori { get; set; }
     }
 }

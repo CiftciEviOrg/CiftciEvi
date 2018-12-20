@@ -17,6 +17,5 @@ namespace CiftciEvi.Models
      
         public sbyte Deneyim { get; set; }    // 1-10 a kadar. sbyte
         public Kategori Kategori { get; set; }
-        public Ilan IlanId { get; set; }
     }
 }

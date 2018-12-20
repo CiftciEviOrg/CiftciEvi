@@ -35,5 +35,6 @@ namespace CiftciEvi.Models
 
         public Onay Onay { get; set; }
 
+        public List<Kategori> Kategori { get; set; }
     }
 }

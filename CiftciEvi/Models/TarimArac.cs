@@ -24,7 +24,6 @@ namespace CiftciEvi.Models
         public int CalismaSaati { get; set; }
         public int KabinTipi { get; set; }
         public int CekisTipi { get; set; }
-        public TarimAracKategori Kategori { get; set; }
-        public Ilan IlanId { get; set; }
+        public Kategori Kategori { get; set; }
     }
 }

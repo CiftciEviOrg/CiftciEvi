@@ -113,3 +113,46 @@
 
 
 
+
+
+
+@*<script>
+
+        $("#UstKategoriId").change(function () {
+
+            var ddlUstKategori = $(this);
+            var Id = ddlUstKategori.val();
+            var ddlAltKategori = $("#AltKategoriId");
+            if (Id != "" || Id != "-1") {
+
+                $("#AltKAtegoriId option").not(":first").remove();
+                ddlAltKategori.html("");
+                $.ajax({
+                    method: 'GET',
+                    url: '@Url.Action("GetCitiesByCountry", "Ilan")',
+                    data: {'Id':Id },
+                    dataType: 'json',
+                    success: function (result) {
+
+                        for (var i = 0; i < result.length; i++) {
+                            var AltKategoriAdi = result[i].KategoriAdi;
+                            var altKategoriID = result[i].Id;                                ;
+                            var opt = $("<option></option>");
+
+                            opt.text(AltKategoriAdi);
+                            opt.attr("value", altKategoriID);
+
+                            ddlAltKategori.append(opt);
+                        }
+                    }
+                });
+
+            }
+            else {
+            $("#AltKategoriId option").not(":first").remove();
+            }
+
+        });
+
+
+</script>*@

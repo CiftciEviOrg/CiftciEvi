@@ -19,7 +19,6 @@ namespace CiftciEvi.Models
         public int Yas { get; set; }
         public bool Cinsiyet { get; set; }
         public bool TopluSatis { get; set; }
-        public HayvanKategori Kategori { get; set; }
-        public Ilan IlanId { get; set; }
+        public Kategori Kategori { get; set; }
     }
 }
