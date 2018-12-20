@@ -21,14 +21,13 @@ namespace CiftciEvi.Controllers
             return View();
         }
 
+        public ActionResult Ekle()
+        {
+            return View();
+        }
 
 
-
-
-
-
-
-
+        #region "eski"
         //public ActionResult Ekle(Kategori kategori)
         //{
 
@@ -79,19 +78,6 @@ namespace CiftciEvi.Controllers
         //    List<Kategori> result = db.Kategoriler.Where(x => x.KID == Id).ToList();
         //    return Json(result, JsonRequestBehavior.AllowGet);
         //}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        #endregion
     }
 }
