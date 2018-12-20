@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Web;
 
 namespace CiftciEvi.Models
 {
-    public class Kategori
+    public class HayvanKategori
     {
         public int Id { get; set; }
         public string KategoriAdi { get; set; }
