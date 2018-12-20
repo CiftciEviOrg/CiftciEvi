@@ -98,7 +98,7 @@ namespace CiftciEvi.Models
                     CalismaSaati=1200,
                     KabinTipi=4,
                     CekisTipi=4,
-                    
+
                 },
                 #endregion
                 #region "BicerDover"
@@ -195,6 +195,7 @@ namespace CiftciEvi.Models
             }
             #endregion
 
+            //Eski kategoriler
             #region "Sonsuz Kategori"
             List<Kategori> kategoriler = new List<Kategori>() {
                 new Kategori(){KategoriAdi="Tarım Araçları	",KID=0},
@@ -319,7 +320,140 @@ namespace CiftciEvi.Models
             }
             #endregion
 
-            
+            //Yeni kategoriler
+            List<TarimAracKategori> tarimAracKategorileri = new List<TarimAracKategori>()
+            {
+                new TarimAracKategori{KategoriAdi="	Traktör	",KID=  0   },
+                new TarimAracKategori{KategoriAdi="	Toprak & Toprak İşleme	",KID=  0   },
+                new TarimAracKategori{KategoriAdi="	Hasat & Harman	",KID=  0   },
+                new TarimAracKategori{KategoriAdi="	Bitki & Bakım	",KID=  0   },
+                new TarimAracKategori{KategoriAdi="	Ekim & Dikim	",KID=  0   },
+                new TarimAracKategori{KategoriAdi="	Gübreleme	",KID=  0   },
+                new TarimAracKategori{KategoriAdi="	Sulama	",KID=  0   },
+                new TarimAracKategori{KategoriAdi="	Hayvancılık	",KID=  0   },
+                new TarimAracKategori{KategoriAdi="	Taşıma	",KID=  0   },
+                new TarimAracKategori{KategoriAdi="	Ataşman & Yedek Parça	",KID=  0   },
+                new TarimAracKategori{KategoriAdi="	Ağaç Sökme Makinesi	",KID=  2   },
+                new TarimAracKategori{KategoriAdi="	Çapa Makinesi	",KID=  2   },
+                new TarimAracKategori{KategoriAdi="	Diskaro	",KID=  2   },
+                new TarimAracKategori{KategoriAdi="	Döküm Merdane	",KID=  2   },
+                new TarimAracKategori{KategoriAdi="	Kültivatör	",KID=  2   },
+                new TarimAracKategori{KategoriAdi="	Lazer Tesviye	",KID=  2   },
+                new TarimAracKategori{KategoriAdi="	Odun Kırma Makinesi	",KID=  2   },
+                new TarimAracKategori{KategoriAdi="	Pulluk	",KID=  2   },
+                new TarimAracKategori{KategoriAdi="	Rotovatör	",KID=  2   },
+                new TarimAracKategori{KategoriAdi="	Sap Parçalama Makinesi	",KID=  2   },
+                new TarimAracKategori{KategoriAdi="	Tırmık	",KID=  2   },
+                new TarimAracKategori{KategoriAdi="	Toprak & Çim Havalandırma	",KID=  2   },
+                new TarimAracKategori{KategoriAdi="	Toprak Burgu Makinesi	",KID=  2   },
+                new TarimAracKategori{KategoriAdi="	Toprak Öğütme Makinesi	",KID=  2   },
+                new TarimAracKategori{KategoriAdi="	Biçerdöver	",KID=  3   },
+                new TarimAracKategori{KategoriAdi="	Ağaç Silkeleme Makinesi	",KID=  3   },
+                new TarimAracKategori{KategoriAdi="	Balya & Silaj	",KID=  3   },
+                new TarimAracKategori{KategoriAdi="	Fındık Patoz & Toplama	",KID=  3   },
+                new TarimAracKategori{KategoriAdi="	Fıstık Hasat Makinesi	",KID=  3   },
+                new TarimAracKategori{KategoriAdi="	Harman Makinesi	",KID=  3   },
+                new TarimAracKategori{KategoriAdi="	Hububat Kurutma Makinesi	",KID=  3   },
+                new TarimAracKategori{KategoriAdi="	Meyve & Zeytin Toplama	",KID=  3   },
+                new TarimAracKategori{KategoriAdi="	Mısır Hasat Tablası	",KID=  3   },
+                new TarimAracKategori{KategoriAdi="	Mısır Silaj Makinesi	",KID=  3   },
+                new TarimAracKategori{KategoriAdi="	Pamuk Toplama Makinesi	",KID=  3   },
+                new TarimAracKategori{KategoriAdi="	Pancar Sökme Makinesi	",KID=  3   },
+                new TarimAracKategori{KategoriAdi="	Patates & Soğan Sökme	",KID=  3   },
+                new TarimAracKategori{KategoriAdi="	Pirinç Hasat Makinesi	",KID=  3   },
+                new TarimAracKategori{KategoriAdi="	Saman Makinesi	",KID=  3   },
+                new TarimAracKategori{KategoriAdi="	Silaj Paketleme Makinesi	",KID=  3   },
+                new TarimAracKategori{KategoriAdi="	Tohum Eleme Makinesi	",KID=  3   },
+                new TarimAracKategori{KategoriAdi="	Zeytin Eleme Makinesi	",KID=  3   },
+                new TarimAracKategori{KategoriAdi="	Budama Makinesi	",KID=  4   },
+                new TarimAracKategori{KategoriAdi="	Çayır, Çim & Ot Biçme	",KID=  4   },
+                new TarimAracKategori{KategoriAdi="	Orak & Tırpan Makinesi	",KID=  4   },
+                new TarimAracKategori{KategoriAdi="	Pelet Makinesi	",KID=  4   },
+                new TarimAracKategori{KategoriAdi="	Talaş Hazırlama	",KID=  4   },
+                new TarimAracKategori{KategoriAdi="	Üfleme Toplama Makinesi	",KID=  4   },
+                new TarimAracKategori{KategoriAdi="	Yaprak & Dal Öğütme Makinesi	",KID=  4   },
+                new TarimAracKategori{KategoriAdi="	Ekim Makinesi	",KID=  5   },
+                new TarimAracKategori{KategoriAdi="	Patates & Soğan Ekme	",KID=  5   },
+                new TarimAracKategori{KategoriAdi="	Tütün Dikim Makinesi	",KID=  5   },
+                new TarimAracKategori{KategoriAdi="	Gübre Dağıtma & Serpme	",KID=  6   },
+                new TarimAracKategori{KategoriAdi="	Gübre Kurutma Makinesi	",KID=  6   },
+                new TarimAracKategori{KategoriAdi="	Gübre Parçalama	",KID=  6   },
+                new TarimAracKategori{KategoriAdi="	Gübre Sıyırıcı Sistemi	",KID=  6   },
+                new TarimAracKategori{KategoriAdi="	Gübre Tankı	",KID=  7   },
+                new TarimAracKategori{KategoriAdi="	Pancar Motoru	",KID=  7   },
+                new TarimAracKategori{KategoriAdi="	Sulama Makinesi	",KID=  7   },
+                new TarimAracKategori{KategoriAdi="	Su Pompası & Motoru	",KID=  7   },
+                new TarimAracKategori{KategoriAdi="	Hayvan Kaşıma Fırçası	",KID=  8   },
+                new TarimAracKategori{KategoriAdi="	Süt Sağma Makinesi	",KID=  8   },
+                new TarimAracKategori{KategoriAdi="	Yem Ezme & Kırma	",KID=  8   },
+                new TarimAracKategori{KategoriAdi="	Yem Karma Makinesi	",KID=  8   },
+                new TarimAracKategori{KategoriAdi="	Yem Üretim Makinesi	",KID=  8   },
+                new TarimAracKategori{KategoriAdi="	Römork	",KID=  9   },
+                new TarimAracKategori{KategoriAdi="	Konveyör, Bant & Helezon	",KID=  9   },
+                new TarimAracKategori{KategoriAdi="	Tomruk Çekici Vinç	",KID=  9   }
+
+            };
+            foreach (var item in tarimAracKategorileri)
+            {
+                context.TarimAracKategoriler.Add(item);
+            }
+
+            List<HizmetveIsKategori> hizmetveIsKategorileri = new List<HizmetveIsKategori>()
+            {
+                new HizmetveIsKategori(){KategoriAdi="	Tarim İşleri	",KID=  0   },
+                new HizmetveIsKategori(){KategoriAdi="	Hayvancılık İşleri	",KID=  0   },
+                new HizmetveIsKategori(){KategoriAdi="	Kümes Hayvancılığı	",KID=  0   },
+                new HizmetveIsKategori(){KategoriAdi="	Arıcılık 	",KID=  0   },
+                new HizmetveIsKategori(){KategoriAdi="	Bahçıvanlık Hizmeti	",KID=  0   },
+                new HizmetveIsKategori(){KategoriAdi="	Hasat & Harman	",KID=  1   },
+                new HizmetveIsKategori(){KategoriAdi="	Bitki & Bakım	",KID=  1   },
+                new HizmetveIsKategori(){KategoriAdi="	Ekim & Dikim	",KID=  1   },
+                new HizmetveIsKategori(){KategoriAdi="	Gübreleme	",KID=  1   },
+                new HizmetveIsKategori(){KategoriAdi="	Sulama	",KID=  1   }
+
+            };
+            foreach (var item in hizmetveIsKategorileri)
+            {
+                context.HizmetveIsKategoriler.Add(item);
+            }
+
+            List<HayvanKategori> hayvanKategorileri = new List<HayvanKategori>()
+            {
+                new HayvanKategori(){KategoriAdi="	Büyükbaş	",KID=  0   },
+                new HayvanKategori(){KategoriAdi="	Küçükbaş	",KID=  0   },
+                new HayvanKategori(){KategoriAdi="	Kümes Hayvanları	",KID=  0   },
+                new HayvanKategori(){KategoriAdi="	Böcekler	",KID=  0   },
+                new HayvanKategori(){KategoriAdi="	At 	",KID=  2   },
+                new HayvanKategori(){KategoriAdi="	Boğa	",KID=  2   },
+                new HayvanKategori(){KategoriAdi="	Deve	",KID=  2   },
+                new HayvanKategori(){KategoriAdi="	Eşek	",KID=  2   },
+                new HayvanKategori(){KategoriAdi="	İnek	",KID=  2   },
+                new HayvanKategori(){KategoriAdi="	Lama	",KID=  2   },
+                new HayvanKategori(){KategoriAdi="	Manda	",KID=  2   },
+                new HayvanKategori(){KategoriAdi="	Keçi	",KID=  3   },
+                new HayvanKategori(){KategoriAdi="	Koç 	",KID=  3   },
+                new HayvanKategori(){KategoriAdi="	Koyun	",KID=  3   },
+                new HayvanKategori(){KategoriAdi="	Kuzu	",KID=  3   },
+                new HayvanKategori(){KategoriAdi="	Deve Kuşu	",KID=  4   },
+                new HayvanKategori(){KategoriAdi="	Güvercin	",KID=  4   },
+                new HayvanKategori(){KategoriAdi="	Hindi	",KID=  4   },
+                new HayvanKategori(){KategoriAdi="	Horoz	",KID=  4   },
+                new HayvanKategori(){KategoriAdi="	Kaz	",KID=  4   },
+                new HayvanKategori(){KategoriAdi="	Kuğu	",KID=  4   },
+                new HayvanKategori(){KategoriAdi="	Ördek	",KID=  4   },
+                new HayvanKategori(){KategoriAdi="	Tavuk	",KID=  4   },
+                new HayvanKategori(){KategoriAdi="	Tavus Kuşu	",KID=  4   },
+                new HayvanKategori(){KategoriAdi="	Kuluçkalık Yumurta	",KID=  5   },
+                new HayvanKategori(){KategoriAdi="	Arı	",KID=  5   },
+                new HayvanKategori(){KategoriAdi="	İpek Böceği	",KID=  5   }
+
+            };
+            foreach (var item in hayvanKategorileri)
+            {
+                context.HayvanKategoriler.Add(item);
+            }
+
+
             context.SaveChanges();
             base.Seed(context);
         }

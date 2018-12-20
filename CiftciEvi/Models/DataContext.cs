@@ -29,5 +29,10 @@ namespace CiftciEvi.Models
         public DbSet<Hayvan> Hayvanlar { get; set; }
         public DbSet<Kategori> Kategoriler { get; set; }
 
+        public DbSet<TarimAracKategori> TarimAracKategoriler { get; set; }
+        public DbSet<HayvanKategori> HayvanKategoriler { get; set; }
+        public DbSet<HizmetveIsKategori> HizmetveIsKategoriler { get; set; }
+
+
     }
 }
