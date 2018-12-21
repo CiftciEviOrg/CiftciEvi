@@ -1,0 +1,114 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+</head>
+<body>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    @*<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>*@
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/Home/Index">Çiftçi Evi</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/Home/Portal">Portal</a>
+                    </li>
+                    <li class="nav-item active" style="padding-left:7%">
+
+                    </li>
+                    <li class="nav-item active" style="padding-left:75px;">
+                        <form class="form-inline my-2 my-lg-0">
+                            <input class="form-control mr-sm-2" type="search" placeholder="İlan Ara" aria-label="Search" style="width:400px;">
+                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Ara</button>
+                        </form>
+                    </li>
+
+
+                </ul>
+
+                <form class="form-inline" style="">
+
+                    @if (Session["uyeid"] != null)
+                    {
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item active" style="padding-right:6px;">
+                                <a href="/Profil" style="color:aliceblue">@Session["kullaniciadi"].ToString()</a>
+                            </li>
+                            <li>
+                                <a style="padding-right:6px; padding-left:6px; color:aliceblue;">|</a>
+                            </li>
+                            <li class="nav-item active">
+                                <a href="/Giris/Logout" style="color:aliceblue"> Çıkış </a>
+                            </li>
+                            @if (Convert.ToBoolean(Session["yetki"]) == true)
+                            {
+                                <li class="nav-item active" style="">
+                                    <a href="/Admin/Index" style="color:burlywood; padding-left:9px;">Admin Panel</a>
+                                </li>
+                            }
+                        </ul>
+
+                    }
+                    else
+                    {
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item active" style="padding-right:25px;">
+                                <a href="/Ilan/Ekle" style="color:aliceblue">İlan Ver</a>
+                            </li>
+                            <li class="nav-item active" style="">
+                                <a href="/Giris/Login" style="color:aliceblue">Giriş</a>
+                            </li>
+                            <li>
+                                <a style="padding-right:6px; padding-left:6px; color:aliceblue;">|</a>
+                            </li>
+                            <li class="nav-item active">
+                                <a href="/Kullanici/Kayit" style="color:aliceblue">Kaydol</a>
+                            </li>
+                        </ul>
+
+                    }
+
+
+                </form>
+
+
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row" style="padding-top:15px;">
+
+           
+
+            <div class="col-md-12" style=" ">
+                @RenderBody()
+            </div>
+
+          
+
+        </div>
+    </div>
+
+
+</body>
+</html>
+

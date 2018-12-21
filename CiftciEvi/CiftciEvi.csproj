@@ -181,6 +181,9 @@
     <Content Include="Views\Ilan\Ekle.cshtml" />
     <Content Include="Views\Ilan\_DenemePartial.cshtml" />
     <Content Include="Views\TarimArac\_TarimAracEkle.cshtml" />
+    <Content Include="Views\Shared\_AdminLayout.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Admin\_KullaniciList.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

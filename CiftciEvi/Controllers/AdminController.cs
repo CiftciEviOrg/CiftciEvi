@@ -15,7 +15,13 @@ namespace CiftciEvi.Controllers
         // GET: Admin
         public ActionResult Index()
         {
-            return View();
+            var adminlist = db.Kullanicilar.Where(i => i.Adminmi == true).ToList();
+            return View(adminlist);
+        }
+        public PartialViewResult KullaniciList()
+        {
+            var kullanicilist = db.Kullanicilar.Where(i => i.Adminmi == false).ToList();
+            return PartialView("_KullaniciList",kullanicilist);
         }
 
         // GET: Kullanici/AdminKayit
@@ -40,9 +46,7 @@ namespace CiftciEvi.Controllers
                 return RedirectToAction("Login", "Giris");
             }
             return View(kullanici);
-
         }
-
 
         // GET: Kullanici/Edit/5
         public ActionResult Guncelle(int? id)
