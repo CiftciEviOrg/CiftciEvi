@@ -1,38 +1,46 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Ekle";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
 <h2>Ekle</h2>
-
-<div class="dropdown">
-    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Kategoriler
-    </button>
-    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item" href="#" id="#myDropDown">Tarım Araçları</a>
-        <a class="dropdown-item" href="#" id="#myDropDown">Another action</a>
-        <a class="dropdown-item" href="#" id="#myDropDown">Something else here</a>
+<div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                İlan Kategori
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item a1" href="#">Tarım Araçları</a>
+                <a class="dropdown-item a2" href="#">Arazi</a>
+                <a class="dropdown-item a3" href="#">Hizmet Ver</a>
+                <a class="dropdown-item a4" href="#">İş İlanı</a>
+                <a class="dropdown-item a5" href="#">Hayvanlar</a>
+            </div>
+        </div>
     </div>
-    <div id="partialPlaceHolder" style="display:none;"> </div>
+    <div class="col-md-4"></div>
 </div>
-
-
+<div class="row" id="partialdiv">
+</div>
 <script>
-    $('#myDropDown').change(function () {
-
-        /* Get the selected value of dropdownlist */
-        var selectedID = $(this).val();
-
-        /* Request the partial view with .get request. */
-        $.get('/Controller/MyAction/' + selectedID, function (data) {
-
-            /* data is the pure html returned from action method, load it to your page */
-            $('#partialPlaceHolder').html(data);
-            /* little fade in effect */
-            $('#partialPlaceHolder').fadeIn('fast');
-        });
-
+    $(document).ready(function () {
+        $(".a1").click(function () {
+            $("#partialdiv").load("/Ilan/DenemePartial");
+        })
+        $(".a2").click(function () {
+            $("#partialdiv").load("/Ilan/DenemePartial");
+        })
+        $(".a3").click(function () {
+            $("#partialdiv").load("/Ilan/DenemePartial");
+        })
+        $(".a4").click(function () {
+            $("#partialdiv").load("/Ilan/DenemePartial");
+        })
+        $(".a5").click(function () {
+            $("#partialdiv").load("/Ilan/DenemePartial");
+        })
     });
+
 </script>

@@ -27,6 +27,13 @@ namespace CiftciEvi.Controllers
         }
 
 
+
+        public PartialViewResult DenemePartial()
+        {
+            return PartialView("_DenemePartial");
+        }
+
+
         #region "eski"
         //public ActionResult Ekle(Kategori kategori)
         //{

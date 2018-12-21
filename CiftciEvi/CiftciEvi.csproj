@@ -179,6 +179,7 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
     <Content Include="Views\Ilan\Index.cshtml" />
     <Content Include="Views\Ilan\Ekle.cshtml" />
+    <Content Include="Views\Ilan\_DenemePartial.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
