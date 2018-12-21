@@ -13,8 +13,7 @@ namespace CiftciEvi.Controllers
 
         private DataContext db = new DataContext();
 
-
-
+        
         public ActionResult Index()
         {
 
@@ -35,6 +34,7 @@ namespace CiftciEvi.Controllers
 
 
         #region "eski"
+
         //public ActionResult Ekle(Kategori kategori)
         //{
 
@@ -68,6 +68,9 @@ namespace CiftciEvi.Controllers
 
         //    return View(indexViewModel);
         //}
+
+
+
 
         //[HttpPost]
         //public ActionResult Ekle(ilanViewModel ilan)

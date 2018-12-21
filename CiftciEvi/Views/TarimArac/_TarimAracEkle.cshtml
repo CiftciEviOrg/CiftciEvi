@@ -1,0 +1,105 @@
+﻿@*@model CiftciEvi.Models.TarimArac
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <h4>TarimArac</h4>
+        </div>
+    }*@
+
+@using CiftciEvi.Models.viewModel
+@model ilanViewModel
+<div class="form-horizontal">
+    <h4>TarimArac</h4>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>DropDown Doldurma</h2>
+                <hr />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+
+                @using (Html.BeginForm())
+                {
+                    <div class="form-horizontal">
+
+                        <div class="form-group" id="ust_drop">
+                            <label class="col-md-2 control-label">Araç Türü :</label>
+                            <div class="col-md-10">
+                                @Html.DropDownListFor(m => m.UstKategoriId, Model.UstKategoriData, "Lütfen Seçiniz", new { @class = "form-control dropdown" })
+                            </div>
+                        </div>
+
+                        <div class="form-group" id="alt_drop">
+                            <label class="col-md-2 control-label">Araç Tipi :</label>
+                            <div class="col-md-10">
+                                @Html.DropDownListFor(m => m.AltKategoriId, Model.AltKategoriData, "Lütfen Seçiniz", new { @class = "form-control dropdown" })
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <div class="col-md-10 col-md-offset-2">
+                                <button class="btn btn-success" type="submit">Send</button>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-10 col-md-offset-2">
+                                <div class="alert alert-info">
+                                    <b>Selected Country ID :</b> @Model.UstKategoriId<br />
+                                    <b>Selected City ID :</b> @Model.AltKategoriId
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                }
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $("#UstKategoriId").change(function () {
+
+                var ddlCountry = $(this);
+                var countryId = ddlCountry.val();
+
+                if (countryId != "" || countryId != "-1") {
+
+                    $("#AltKategoriId option").not(":first").remove();
+
+                    $.ajax({
+                        method: "GET",
+                        url: '@Url.Action("GetCitiesByCountry", "TarimArac")' + '/' + countryId
+                    }).done(function (result) {
+
+                        var ddlCity = $("#AltKategoriId");
+
+                        for (var i = 0; i < result.length; i++) {
+                            var cityName = result[i].KategoriAdi;
+                            var cityId = result[i].KID;
+                            var opt = $("<option></option>");
+
+                            opt.text(cityName);
+                            opt.attr("value", cityId);
+                            //opt.val(cityId);
+
+                            ddlCity.append(opt);
+                        }
+
+                    })
+                }
+                else {
+                    //$("#SelectedCityId").empty();
+                    $("#AltKategoriId option").not(":first").remove();
+                }
+            });
+</script>

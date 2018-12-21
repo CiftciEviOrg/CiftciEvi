@@ -180,6 +180,7 @@
     <Content Include="Views\Ilan\Index.cshtml" />
     <Content Include="Views\Ilan\Ekle.cshtml" />
     <Content Include="Views\Ilan\_DenemePartial.cshtml" />
+    <Content Include="Views\TarimArac\_TarimAracEkle.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -192,7 +193,6 @@
     <Folder Include="Views\Adres\" />
     <Folder Include="Views\Arazi\" />
     <Folder Include="Views\Hayvan\" />
-    <Folder Include="Views\TarimArac\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
