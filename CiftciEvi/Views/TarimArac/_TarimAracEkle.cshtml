@@ -1,16 +1,6 @@
-﻿@*@model CiftciEvi.Models.TarimArac
-
-    @using (Html.BeginForm())
-    {
-        @Html.AntiForgeryToken()
-
-        <div class="form-horizontal">
-            <h4>TarimArac</h4>
-        </div>
-    }*@
-
-@using CiftciEvi.Models.viewModel
+﻿@using CiftciEvi.Models.viewModel
 @model ilanViewModel
+
 <div class="form-horizontal">
     <h4>TarimArac</h4>
     <div class="container">
@@ -22,80 +12,115 @@
         </div>
 
         <div class="row">
-            <div class="col-md-10 col-md-offset-1">
+            <div class="col-md-12">
 
                 @using (Html.BeginForm())
                 {
-                    <div class="form-horizontal">
+                    @*<div class="form-horizontal">*@
 
                         <div class="form-group" id="ust_drop">
                             Araç Türü :
                             @Html.DropDownListFor(m => m.UstKategoriId, Model.UstKategoriData, "Lütfen Seçiniz", new { @class = "form-control dropdown" })
                         </div>
 
-                        <div class="form-group" id="alt_drop">Araç Tipi :
-                            
-                                @Html.DropDownListFor(m => m.AltKategoriId, Model.AltKategoriData, "Lütfen Seçiniz", new { @class = "form-control dropdown" })
+                        <div class="form-group" id="alt_drop">
+                            Araç Tipi :
+                            @Html.DropDownListFor(m => m.AltKategoriId, Model.AltKategoriData, "Lütfen Seçiniz", new { @class = "form-control dropdown" })
                         </div>
 
+                        <div class="container" id="traktorBicerKayit">
 
-                        <div class="form-group">
-                            <div class="col-md-10 col-md-offset-2">
-                                <button class="btn btn-success" type="submit">Send</button>
-                            </div>
+                            @*Buraya traktorBicerKayit partial view gelecek*@
+
+
                         </div>
 
-                        @*<div class="form-group">
-                            <div class="col-md-10 col-md-offset-2">
-                                <div class="alert alert-info">
-                                    <b>Selected Country ID :</b> @Model.UstKategoriId<br />
-                                    <b>Selected City ID :</b> @Model.AltKategoriId
-                                </div>
-                            </div>
-                        </div>*@
+                        <div class="form-group" id="diger">
 
-                    </div>
+                            @*Buraya diger partial view gelecek*@
+
+                        </div>
+
+                    @*</div>*@
+
+
                 }
-
             </div>
         </div>
     </div>
 </div>
 
 <script>
+    $(document).ready(function () {
+        $("#alt_drop").hide();
+    });
     $("#UstKategoriId").change(function () {
+        var ddlUst = $(this);
+        var ustKatID = ddlUst.val();
+        
+        if (ustKatID == 1 || ustKatID == 2) { //Eğer ID 1 ve 2 olan yani traktör ve biçer seçilirse alt taraftaki drop saklanmaya devam edecek
+            
+            $("#alt_drop").hide();
+            $("#diger").hide(); // digerlerinin geleceği div
 
-                var ddlCountry = $(this);
-                var countryId = ddlCountry.val();
-
-                if (countryId != "" || countryId != "-1") {
-
-                    $("#AltKategoriId option").not(":first").remove();
-
-                    $.ajax({
-                        method: "GET",
-                        url: '@Url.Action("GetCitiesByCountry", "TarimArac")' + '/' + countryId
-                    }).done(function (result) {
-
-                        var ddlCity = $("#AltKategoriId");
-
-                        for (var i = 0; i < result.length; i++) {
-                            var cityName = result[i].KategoriAdi;
-                            var cityId = result[i].KID;
-                            var opt = $("<option></option>");
-
-                            opt.text(cityName);
-                            opt.attr("value", cityId);
-                            //opt.val(cityId);
-
-                            ddlCity.append(opt);
-                        }
-
-                    })
-                }
-                else {
-                    //$("#SelectedCityId").empty();
-                    $("#AltKategoriId option").not(":first").remove();
-                }
+            //LOAD AJAX TRAKTOR  VE BİCER İCİN
+            //$("#traktorBicerKayit").load("/TarimArac/TraktorBicerKayit"); //Divin içini dolduracağız parametre olarakda ıd gönderilecek ki neyi kaydetttiğimizi bilelim
+            $.ajax({
+                method: "GET",
+                url: "/TarimArac/TraktorBicerKayit",
+                data: { katID: ddlUst.val() }
+            }).done(function (d) {
+                $("#traktorBicerKayit").html(d);
+                $("#traktorBicerKayit").show(); //traktör ve bicer için ayrılan yukarıda dolan divi gösterelim.
             });
+
+
+        } else {
+            $("#alt_drop").show();
+            $("#traktorBicerKayit").hide();
+        }
+
+        if (ustKatID != "" || ustKatID != "-1") {
+            $("#AltKategoriId option").not(":first").remove();
+            $.ajax({
+                method: "GET",
+                url: '@Url.Action("GetCitiesByCountry", "TarimArac")' + '/' + ustKatID
+            }).done(function (result) {
+                var ddlCity = $("#AltKategoriId");
+                for (var i = 0; i < result.length; i++) {
+                    var cityName = result[i].KategoriAdi;
+                    var cityId = result[i].KID;
+                    var opt = $("<option></option>");
+                    opt.text(cityName);
+                    opt.attr("value", cityId);
+                    ddlCity.append(opt);
+                }
+                })//.done
+            $("#AltKategoriId").change(function () {
+                var secilenAlt = $("#AltKategoriId option:selected").text();
+                alert(secilenAlt);
+                //BURADA DİGERİ CAGLIRACAK LOAD
+            });
+        } else {
+            $("#AltKategoriId option").not(":first").remove();
+        }
+    });
 </script>
+
+
+@*else {
+        $("#alt_drop").show();
+        $("#AltKategoriId").change(function () {
+
+            $("#diger").load("/TarimArac/DigerAraclarKayit");
+            $("#traktorBicerKayit").hide();
+            $("#diger").show();
+
+            console.log(444);
+
+
+
+            //DİĞERLERİ İÇİN ÇAĞI YAPILACAK
+
+        });
+    }*@

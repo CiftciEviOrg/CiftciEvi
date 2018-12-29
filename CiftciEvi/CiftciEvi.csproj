@@ -107,6 +107,11 @@
     <Content Include="Scripts\jquery-3.3.1.min.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -147,6 +152,8 @@
     <Compile Include="Models\Onay.cs" />
     <Compile Include="Models\Resim.cs" />
     <Compile Include="Models\TarimArac.cs" />
+    <Compile Include="Models\TarimAracCekisTipi.cs" />
+    <Compile Include="Models\TarimAracKabinTipi.cs" />
     <Compile Include="Models\TarimAracKategori.cs" />
     <Compile Include="Models\viewModel\ilanViewModel.cs" />
     <Compile Include="Models\viewModel\loginModel.cs" />
@@ -184,6 +191,8 @@
     <Content Include="Views\Shared\_AdminLayout.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Admin\_KullaniciList.cshtml" />
+    <Content Include="Views\TarimArac\TraktorBicerKayit.cshtml" />
+    <Content Include="Views\TarimArac\_DigerAraclarKayit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

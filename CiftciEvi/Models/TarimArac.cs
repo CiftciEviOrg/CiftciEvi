@@ -10,13 +10,9 @@ namespace CiftciEvi.Models
     {
         //Buradaki validasyonlar ara modellerde ayrı ayrı girilecektir.
         public int Id { get; set; }
-        
-        
-
         public int Tipi { get; set; }
         public int ModelYili { get; set; }
 
-        
         //Extra 8: Marka icin yeni bir model icab etti
         public MarkaTarimArac Marka { get; set; }
 
@@ -28,11 +24,11 @@ namespace CiftciEvi.Models
         public int CalismaSaati { get; set; }
 
         //Extra 17: CekisTip ve KabinTipi model icab etti
-        public TarimAracCekisTipi CekisTipiId { get; set; }
-        public TarimAracKabinTipi KabinTipiId { get; set; }
+        public TarimAracCekisTipi CekisTipi { get; set; }
+        public TarimAracKabinTipi KabinTipi { get; set; }
 
-        public TarimAracKategori TarimAracKategoriId { get; set; }
+        public TarimAracKategori TarimAracKategori { get; set; }
         
-        public Ilan IlanId { get; set; }
+        public Ilan Ilan { get; set; }
     }
 }

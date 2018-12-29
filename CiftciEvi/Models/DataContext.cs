@@ -32,7 +32,9 @@ namespace CiftciEvi.Models
         public DbSet<TarimAracKategori> TarimAracKategoriler { get; set; }
         public DbSet<HayvanKategori> HayvanKategoriler { get; set; }
         public DbSet<HizmetveIsKategori> HizmetveIsKategoriler { get; set; }
-
-
+        public DbSet<Ilan> Ilanlar { get; set; }
+        public DbSet<TarimAracCekisTipi> CekisTipleri { get; set; }
+        public DbSet<TarimAracKabinTipi> KabinTipleri { get; set; }
+        
     }
 }
